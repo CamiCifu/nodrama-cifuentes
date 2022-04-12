@@ -270,8 +270,19 @@ footer {
 .send__button {
   padding: 0.1rem 1rem 0.1rem 1rem;
   text-transform: capitalize;
-  background-color: rgba(77, 132, 216, 0.26);
+  background-color: rgba(133, 226, 109, 0.26);
   border: 0.01rem solid black;
+}
+
+.send__button:before {
+  background-color: red;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+.send__button:hover:before {
+  transform: rotate(0deg);
 }
 
 /* News*/
@@ -378,15 +389,23 @@ footer {
 
 /* Projects*/
 
+/*cambios projects para entrega animacion*/
+
 .projects__intro {
-  color: rgb(23, 23, 48);
+  color: rgb(246, 240, 240);
   font-style: italic;
-  background-color: rgb(173, 226, 226);
+  background-color: rgb(29, 27, 79);
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: 0.2rem;
   padding: 1rem 1rem 1rem 1rem;
   text-align: justify;
+  opacity: 0.5;
+  transition: opacity 1s;
+}
+
+.projects__intro:hover {
+  opacity: 1;
 }
 
 .projects__intro--additional {
@@ -543,4 +562,9 @@ footer {
     width: 8rem;
     text-align: center;
   }
+}
+
+/*agregados para entrega animacion*/
+#grad {
+  background: linear-gradient(to top, grey, white);
 }
