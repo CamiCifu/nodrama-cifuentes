@@ -196,6 +196,7 @@ footer {
   background: black;
   padding: 0.4rem 0;
   position: sticky;
+
   bottom: 0;
   margin: 0 0 0 0;
   z-index: 1;
@@ -274,23 +275,12 @@ footer {
   border: 0.01rem solid black;
 }
 
-.send__button:before {
-  background-color: red;
-  transform-origin: bottom left;
-  transform: rotate(-90deg);
-  transition: transform 1s;
-}
-
-.send__button:hover:before {
-  transform: rotate(0deg);
-}
-
 /* News*/
 
 .news__element {
   display: inline-block;
   padding: 1rem 3rem 1rem 3rem;
-  min-height: 20rem;
+  min-height: 60rem;
 }
 
 .news__elementpart {
@@ -339,6 +329,7 @@ footer {
   justify-content: center;
   align-items: center;
   align-content: center;
+  background-color: rgb(211, 208, 208);
 }
 
 /* Articles*/
@@ -485,6 +476,8 @@ footer {
 
 .propaganda {
   grid-area: propaganda;
+  transition-property: width, height;
+  transition-duration: 2s;
 }
 
 /*Media query*/
@@ -567,4 +560,9 @@ footer {
 /*agregados para entrega animacion*/
 #grad {
   background: linear-gradient(to top, grey, white);
+}
+
+.propaganda:hover {
+  width: 150%;
+  height: 150%;
 }
