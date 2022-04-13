@@ -121,7 +121,7 @@ main {
 /*MainMenu*/
 
 .main__image {
-  background-image: url(/Media/no\ drama\ image.jpg);
+  background-image: url(/media/no_drama_image.jpg);
   background-position: center;
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
