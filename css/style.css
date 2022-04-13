@@ -146,6 +146,7 @@ main {
 
 .main__textFrase {
   margin-left: 4%;
+  padding-top: 5%;
 }
 
 .main__textFrase--first {
@@ -335,7 +336,7 @@ footer {
 /* Articles*/
 
 .article__title {
-  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  padding: 4rem 0.1rem 0.1rem 0.1rem;
   margin: 0.1rem 0 0.2rem 0.1rem;
   text-transform: capitalize;
   color: rgb(52, 14, 87);
