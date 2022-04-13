@@ -23,6 +23,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+        <!--CSS-->
+        <link rel="stylesheet" href="css/style.css" />
+
         <!-- Bootstrap CSS -->
         <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -42,82 +45,101 @@
 
   <body>
     <div>
-      <header>
-        <nav class="navbar navbar-dark bg-dark">
-          <div class="container p-3 mb-2 bg-dark text-white">
+      <header >
+        <nav class="navbar navbar-expand-lg fixed-top menu navbar-dark bg-dark">
+          <div class="container  p-3 ">
   
-              <a class="navbar-brand"  href="index.html">
+              <a class="navbar-brand header__image"  href="index.html">
                 <img src="/Media/carablanca.png" alt="happy face logo" />
               </a>
+
               <button
               class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navMenu">
+              data-bs-target="#navbarNav"
+              aria-controls= "navbarNav"
+              aira-expandes="false"
+              aria-label="Toggle navigation"
+              >
+  
               <span class="navbar-toggler-icon"></span>
             </button>
 
-
-
-            <div class="collapse md-navbar xs-navbar-collapse" id="navMenu">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item" ><a class="nav-link active" aria-current="page"  href="index.html">Menu</a></li>
-                  <li class="nav-item"  ><a class="nav-link" href="news.html">News</a></li>
-                  <li class="nav-item"  ><a class="nav-link" href="articles.html">Articles</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="projects.html">Projects</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="contact.html">Contact</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item px-2" ><a class="nav-link active text-white" aria-current="page"  href="index.html">Menu</a></li>
+                  <li class="nav-item px-2"  ><a class="nav-link text-white" href="news.html">News</a></li>
+                  <li class="nav-item px-2"  ><a class="nav-link text-white" href="articles.html">Articles</a></li>
+                  <li class="nav-item px-2" ><a class="nav-link text-white" href="projects.html">Projects</a></li>
+                  <li class="nav-item px-2" ><a class="nav-link text-white" href="contact.html">Contact</a></li>
                 </ul>
             </div>
+          </div>
         </nav>
-      </header>
 
+      </header>
 
       <main>
       
 
           <section class="container">
-              <div>
+            <div 
+            class="bg-image" 
+            style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+                   height: 100%
+                   width: 100%">
+
+            <div>
                 <h1 class="text-left text-nowrap"># No drama</h1>
-                <p class="text-left">
+                <p class="text-left text-dark">
                   "No complaining, no worrying and no stressing out ...no drama."
                 </p>
                 <p class="text-left">Welcome.</p>
               </div>
-              <a class="text-right" href="news.html">Latest News!</a>
+
+              <a class="text-right text-white" href="news.html">Latest News!</a>
+
+            </div>
             </section>
 
             <section class="container">
               <div class="text-center">Powered by citizens.</div>
+            </div>
             </section>
 
 
 
       </main>
+      <div>
+      <footer class="footer bg-dark text-white p-3 text-center">
+          <div class="container">
 
-      <footer>
-        <div class="container">
-          <div class="footer__elements">
-            <div class="footer__text footer__part--one">
+
+            <div>
               no.drama.global@gmail.com
             </div>
-            <div class="footer__part--two">
 
-              <div class="footer__text">Social media</div>
-              <div>
-                <a class="footer__text" href="https://www.instagram.com/"
+            <div class="row">
+
+              <div class="col-lg-5 col-md6 mb-md-0">Social media</div>
+              <div class="col-lg-7 col-md-6">
+                <a class="text-white" class="footer__text" href="https://www.instagram.com/"
                   ><i class="fab fa-instagram"></i
                 ></a>
-              </div>
-              <div>
-                <a class="footer__text" href="https://twitter.com/?lang=en"
+                <a class="text-white" href="https://twitter.com/?lang=en"
                   ><i class="fab fa-twitter"></i
                 ></a>
+
               </div>
+
               
             </div>
+
           </div>
+        </footer>
         </div>
-      </footer>
+
     </div>
 
     <!--Bootsrap Java-->
