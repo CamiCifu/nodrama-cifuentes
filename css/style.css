@@ -139,7 +139,7 @@ main {
   background-size: cover;
   width: 100%;
   margin-top: 0 auto;
-  height: 90%;
+  height: 100%;
 }
 
 .index__text {
@@ -173,8 +173,8 @@ main {
 
 .space__secondText {
   margin-left: 10%;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .index__textFrase--second {
@@ -189,7 +189,7 @@ main {
 
 .space__newsButton {
   padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .index__newsButton {
@@ -590,4 +590,33 @@ footer {
 .propaganda:hover {
   width: 150%;
   height: 150%;
+}
+
+.contact__main {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.button {
+  background: #4c6e97;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background: #27394e;
+  color: black;
+}
+button:focus {
+  background: #364d69;
+  outline-style: solid;
+}
+
+.main__articles {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 5rem;
 }

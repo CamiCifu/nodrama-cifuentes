@@ -72,87 +72,86 @@
       </nav>
     </header>
 
-    <main>
+    <main class="main__articles">
       <section>
         <div class="container">
-          <!---Numer 1: article/topic-->
-          <div class="article__title">Sustainability - Happiness</div>
-          <div class="article__space">
-            <div class="Article__elements firstArticle__elements--text">
-              <p>
-                Doing actions that help sustainability, impact directly on our
-                day to day happiness.
-              </p>
-            </div>
-            <div class="Article__elements">
-              <iframe
-                class="Article__elements__video"
-                src="https://www.youtube.com/embed/oZcbSo5gA_k"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-          </div>
-        </div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Sustainability and happiness
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Doing actions that help sustainability, impact directly on our
+                    day to day happiness.</strong>
+                    <div>
+                      <iframe
+                      class="Article__elements__video"
+                      src="https://www.youtube.com/embed/oZcbSo5gA_k"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
 
-        <div class="container">
-          <!---Numer 2: article/topic-->
-          <div class="article__title">Happiness superpower</div>
-          <div class="article__space">
-            <p class="Article__elements">
-              This articles answers: What do we know about happiness and how can
-              employees be happy at work.
-            </p>
-            <p class="Article__elements">
-              "The “World Happiness Report 2021” noted that within the
-              workplace, happiness before the pandemic was largely due to
-              employees’ sense of belonging within an organization and among
-              coworkers, the flexibility afforded to workers, inclusivity, and a
-              sense of purpose to their work (in descending order of
-              importance).5 Things changed dramatically during the pandemic:
-              Having a supportive manager became the largest predictor of
-              happiness — nearly twice as important as the next ranked workplace
-              happiness factor, purpose."
-            </p>
-            <p class="Article__elements">
-              Authors: Paul B. Lester, Ed Diener, and Martin Seligman.
-            </p>
-            <a
-              class="Article__elements secondArticle__video"
-              href="https://sloanreview.mit.edu/article/top-performers-have-a-superpower-happiness/"
-              >Click here and learn more</a
-            >
-          </div>
-        </div>
 
-        <div class="container">
-          <!---Numer 3: article/topic-->
-          <div class="article__title">Start your day with meditation</div>
-          <div class="article__space">
-            <p class="thirdArticle__elements">
-              Have a fresh start everyday and be positive.
-            </p>
-            <p class="thirdArticle__elements">
-              Interesting aricle by Christa Sgobba, C.P.T. " If you’re looking
-              for a meditation practice that’s big on the self-love, this quick
-              meditation routine is one you don’t want to miss."
-            </p>
-            <a
-              class="thirdArticle__elements thirdArticle__video"
-              href="https://www.self.com/story/sweat-with-self-video-self-love-meditation/"
-            >
-              Click here and learn more</a
-            >
+                    </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Happiness superpower
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong> This articles answers: What do we know about happiness and how can
+                    employees be happy at work.</strong> "The “World Happiness Report 2021” noted that within the
+                    workplace, happiness before the pandemic was largely due to
+                    employees’ sense of belonging within an organization and among
+                    coworkers, the flexibility afforded to workers, inclusivity, and a
+                    sense of purpose to their work (in descending order of
+                    importance).5 Things changed dramatically during the pandemic:
+                    Having a supportive manager became the largest predictor of
+                    happiness — nearly twice as important as the next ranked workplace
+                    happiness factor, purpose."
+                    <p>
+                      Authors: Paul B. Lester, Ed Diener, and Martin Seligman.
+                    </p>
+                    <a
+                    class="Article__elements secondArticle__video"
+                    href="https://sloanreview.mit.edu/article/top-performers-have-a-superpower-happiness/"
+                    >Click here and learn more</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Start your day with meditation
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Have a fresh start everyday and be positive.</strong> Interesting aricle by Christa Sgobba, C.P.T. " If you’re looking
+                  for a meditation practice that’s big on the self-love, this quick
+                  meditation routine is one you don’t want to miss."
+                  <a class="thirdArticle__elements thirdArticle__video" href="https://www.self.com/story/sweat-with-self-video-self-love-meditation/">Click here and learn more</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
 
-    <footer class="footer background__footer fixed-bottom">
+    <footer class="footer background__footer ">
       <div class="container ">
         <div class="row py-5 ">
 
