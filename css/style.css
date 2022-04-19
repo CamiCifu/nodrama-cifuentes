@@ -121,10 +121,17 @@ main {
   grid-area: main;
 }
 
-/*MainMenu*/
+/*Index*/
 
-.main__image {
-  background-image: url(/media/no_drama_image.jpg);
+.index__organization {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.index__background {
+  background-image: url(/media/flowers.jpg);
   background-position: center;
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
@@ -135,60 +142,67 @@ main {
   height: 90%;
 }
 
-.main__text {
+.index__text {
   display: grid;
   padding-top: 3rem;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 90% 5% 5%;
+  grid-template-rows: 90% 5% 5%;
   grid-template-areas:
-    "main__textFrase--first "
-    "main__textFrase--second"
-    "main__textFrase--third"
-    "main__newsButton";
+    "index__textFrase--first"
+    "index__textFrase--second"
+    "index__newsButton";
 }
-
-.main__textFrase {
-  margin-left: 4%;
+/*
+.index__textFrase {
+  margin-left: 1%;
   padding-top: 5%;
-}
+}*/
 
-.main__textFrase--first {
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 400%;
-  grid-area: main__textFrase--first;
-}
-
-.main__textFrase--second {
+.space__firstText {
   padding-bottom: 20rem;
   margin-bottom: 2rem;
+}
+.index__textFrase--first {
   font-weight: bold;
   font-size: 200%;
-  grid-area: main__textFrase--second;
+  color: rgb(45, 123, 191);
+  grid-area: index__textFrase--first;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
 }
 
-.main__textFrase--third {
+.space__secondText {
   margin-left: 10%;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
+}
+
+.index__textFrase--second {
+  display: inline-block;
   font-weight: bold;
   font-size: 150%;
-  color: white;
-  grid-area: main__textFrase--third;
+  color: rgb(45, 123, 191);
+  grid-area: index__textFrase--second;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
 }
 
-.main__newsButton {
-  display: block;
-  margin-left: 80%;
+.space__newsButton {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  color: white;
-  grid-area: main__newsButton;
 }
 
-.main__lowText {
+.index__newsButton {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 80%;
+  color: rgb(5, 5, 5);
+  grid-area: index__newsButton;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
+}
+
+.index__lowText {
   position: center;
   text-align: center;
   height: 10%;
@@ -196,6 +210,11 @@ main {
 
 /*Footer*/
 
+.background__footer {
+  background-color: rgb(89, 112, 129);
+}
+
+/*
 footer {
   background: black;
   padding: 0.4rem 0;
@@ -231,9 +250,10 @@ footer {
 .footer__text {
   color: white;
 }
-
+*/
 /* MainContact*/
 
+/*
 .contact__fieldset {
   margin: 3rem 0 3rem 0;
 }
