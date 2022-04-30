@@ -1,0 +1,93 @@
+/*Index*/
+
+.index__organization {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.index__background {
+  background-image: url(/media/flowers.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  margin-top: 0 auto;
+  height: 100%;
+}
+
+.index__text {
+  display: grid;
+  padding-top: 3rem;
+  grid-template-columns: 100%;
+  grid-template-rows: 90% 5% 5%;
+  grid-template-areas:
+    "index__textFrase--first"
+    "index__textFrase--second"
+    "index__newsButton";
+}
+/*
+    .index__textFrase {
+      margin-left: 1%;
+      padding-top: 5%;
+    }*/
+
+.space__firstText {
+  padding-bottom: 20rem;
+  margin-bottom: 2rem;
+}
+.index__textFrase--first {
+  font-weight: bold;
+  font-size: 200%;
+  color: rgb(45, 123, 191);
+  grid-area: index__textFrase--first;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
+}
+
+.space__secondText {
+  margin-left: 10%;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.index__textFrase--second {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 150%;
+  color: rgb(45, 123, 191);
+  grid-area: index__textFrase--second;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
+}
+
+.space__newsButton {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.index__newsButton {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 80%;
+  color: rgb(5, 5, 5);
+  grid-area: index__newsButton;
+  background: rgba(224, 231, 230, 0.6);
+  text-align: center;
+}
+
+.index__lowText {
+  position: center;
+  text-align: center;
+  height: 10%;
+}
+
+.index__organization {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}

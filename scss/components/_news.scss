@@ -1,0 +1,84 @@
+/* News*/
+
+.news__element {
+  display: inline-block;
+  padding: 1rem 3rem 1rem 3rem;
+  min-height: 60rem;
+}
+
+.news__elementpart {
+  padding: 1rem 0 1rem 0;
+  display: inline-block;
+  border: 0.2rem solid black;
+  margin: 2rem 0.2rem 2rem 0.2rem;
+  width: 100%;
+  min-height: 10rem;
+}
+
+.news_title {
+  font-weight: bold;
+  font-size: 200%;
+  color: rgb(27, 27, 94);
+  font-style: italic;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+.news_content {
+  font-size: 150%;
+  color: rgb(53, 49, 49);
+  text-align: justify;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+.news__aboutUs {
+  color: rgb(48, 8, 8);
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  margin: 3rem 0rem 3rem 0rem;
+  text-align: center;
+}
+
+.icon__news {
+  color: black;
+  font-size: 400%;
+  text-align: center;
+  position: center;
+}
+
+.propaganda--part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(211, 208, 208);
+}
+
+.news__organization {
+  display: grid;
+  grid-template-areas:
+    "news"
+    "propaganda";
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  min-height: 100vh;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.news {
+  grid-area: news;
+}
+
+.propaganda {
+  grid-area: propaganda;
+  transition-property: width, height;
+  transition-duration: 2s;
+
+  &:hover {
+    width: 150%;
+    height: 150%;
+  }
+}
