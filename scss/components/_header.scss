@@ -67,7 +67,7 @@ ul {
 
 ul li a {
   color: white;
-  font-weight: bold;
+  font-weight: map-get($font-weights, boldweight);
 }
 
 .header__image {

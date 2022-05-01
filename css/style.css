@@ -80,7 +80,7 @@ ul li {
 
 ul li a {
   color: white;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .header__image {
@@ -100,6 +100,7 @@ ul li a {
   font-size: 150%;
 }
 
+/*
 .article__space {
   padding: 1rem 0.1rem 1rem 1rem;
   margin: 0.1rem 1rem 0.2rem 0rem;
@@ -110,30 +111,14 @@ ul li a {
   min-height: 5rem;
   background-color: rgb(253, 242, 255);
   display: inline-block;
-}
-
+}*/
 .Article__elements {
   margin: 1rem 0.3rem 1rem 0.3rem;
   padding: 0.1rem 0.1rem 0.1rem 0.1rem;
 }
 
-.firstArticle__elements__video {
+.Article__elements__video {
   max-width: 70%;
-}
-
-.firstArticle__elements--text {
-  text-align: start;
-  margin-top: 0 auto;
-  padding-top: 0%;
-}
-
-.secondArticle__video {
-  color: rgb(254, 253, 253);
-  background-color: #4c6e97;
-}
-
-.thirdArticle__video {
-  color: rgb(12, 12, 12);
 }
 
 .main__articles {
