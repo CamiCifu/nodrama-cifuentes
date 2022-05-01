@@ -100,18 +100,6 @@ ul li a {
   font-size: 150%;
 }
 
-/*
-.article__space {
-  padding: 1rem 0.1rem 1rem 1rem;
-  margin: 0.1rem 1rem 0.2rem 0rem;
-  width: 100%;
-  border: 0.01rem solid rgb(29, 16, 34);
-  color: black;
-  font-size: 100%;
-  min-height: 5rem;
-  background-color: rgb(253, 242, 255);
-  display: inline-block;
-}*/
 .Article__elements {
   margin: 1rem 0.3rem 1rem 0.3rem;
   padding: 0.1rem 0.1rem 0.1rem 0.1rem;
@@ -204,15 +192,15 @@ ul li a {
 }
 
 /* News*/
-.news__element {
-  display: inline-block;
+.news__element, .propaganda {
+  /*display: inline-block;*/
   padding: 1rem 3rem 1rem 3rem;
   min-height: 60rem;
 }
 
 .news__elementpart {
   padding: 1rem 0 1rem 0;
-  display: inline-block;
+  /*display: inline-block;*/
   border: 0.2rem solid black;
   margin: 2rem 0.2rem 2rem 0.2rem;
   width: 100%;
@@ -220,7 +208,7 @@ ul li a {
 }
 
 .news_title {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 200%;
   color: rgb(27, 27, 94);
   font-style: italic;
@@ -250,6 +238,33 @@ ul li a {
   position: center;
 }
 
+/*
+.news__organization {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  grid-template-areas:
+    "news"
+    "propaganda";
+  min-height: 100vh;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+*/
+/*
+.news {
+  grid-area: news;
+}*/
+.propaganda {
+  transition-property: width, height;
+  transition-duration: 2s;
+}
+.propaganda:hover {
+  width: 150%;
+  height: 150%;
+}
+
 .propaganda--part {
   display: flex;
   flex-direction: row;
@@ -257,31 +272,6 @@ ul li a {
   align-items: center;
   align-content: center;
   background-color: rgb(211, 208, 208);
-}
-
-.news__organization {
-  display: grid;
-  grid-template-areas: "news" "propaganda";
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-  min-height: 100vh;
-  grid-row-gap: 2rem;
-  justify-items: center;
-  align-items: start;
-}
-
-.news {
-  grid-area: news;
-}
-
-.propaganda {
-  grid-area: propaganda;
-  transition-property: width, height;
-  transition-duration: 2s;
-}
-.propaganda:hover {
-  width: 150%;
-  height: 150%;
 }
 
 /*Footer*/
