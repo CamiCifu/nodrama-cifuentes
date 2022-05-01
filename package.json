@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CamiCifu/nodrama-cifuentes/issues"
   },
-  "homepage": "https://github.com/CamiCifu/nodrama-cifuentes#readme"
+  "homepage": "https://github.com/CamiCifu/nodrama-cifuentes#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
 }

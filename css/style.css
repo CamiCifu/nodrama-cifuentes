@@ -1,4 +1,5 @@
 /*base*/
+/*GENERAL*/
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,7 @@ body {
   max-width: 1320px;
 }
 
+/*MAP FOR FONT WEIGHTS*/
 /*components*/
 /*Header*/
 header {
@@ -413,18 +415,13 @@ ul li a {
   grid-template-areas: "index__textFrase--first" "index__textFrase--second" "index__newsButton";
 }
 
-/*
-    .index__textFrase {
-      margin-left: 1%;
-      padding-top: 5%;
-    }*/
 .space__firstText {
   padding-bottom: 20rem;
   margin-bottom: 2rem;
 }
 
 .index__textFrase--first {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 200%;
   color: rgb(45, 123, 191);
   grid-area: index__textFrase--first;
@@ -440,7 +437,7 @@ ul li a {
 
 .index__textFrase--second {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 150%;
   color: rgb(45, 123, 191);
   grid-area: index__textFrase--second;
@@ -455,7 +452,7 @@ ul li a {
 
 .index__newsButton {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 400;
   margin-left: 80%;
   color: rgb(5, 5, 5);
   grid-area: index__newsButton;

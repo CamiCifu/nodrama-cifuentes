@@ -29,19 +29,14 @@
     "index__textFrase--second"
     "index__newsButton";
 }
-/*
-    .index__textFrase {
-      margin-left: 1%;
-      padding-top: 5%;
-    }*/
 
 .space__firstText {
   padding-bottom: 20rem;
   margin-bottom: 2rem;
 }
 .index__textFrase--first {
-  font-weight: bold;
-  font-size: 200%;
+  font-weight: map-get($font-weights, boldweight);
+  font-size: map-get($font-sizes, bigsize);
   color: rgb(45, 123, 191);
   grid-area: index__textFrase--first;
   background: rgba(224, 231, 230, 0.6);
@@ -56,8 +51,8 @@
 
 .index__textFrase--second {
   display: inline-block;
-  font-weight: bold;
-  font-size: 150%;
+  font-weight: map-get($font-weights, boldweight);
+  font-size: map-get($font-sizes, mediumsize);
   color: rgb(45, 123, 191);
   grid-area: index__textFrase--second;
   background: rgba(224, 231, 230, 0.6);
@@ -71,7 +66,7 @@
 
 .index__newsButton {
   display: inline-block;
-  font-weight: bold;
+  font-weight: map-get($font-weights, mediumweight);
   margin-left: 80%;
   color: rgb(5, 5, 5);
   grid-area: index__newsButton;
