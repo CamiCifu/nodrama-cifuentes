@@ -31,8 +31,7 @@
 }
 
 .space__firstText {
-  padding-bottom: 20rem;
-  margin-bottom: 2rem;
+  @include paddingb_marginb(20rem, 2rem);
 }
 .index__textFrase--first {
   font-weight: map-get($font-weights, boldweight);
@@ -45,8 +44,7 @@
 
 .space__secondText {
   margin-left: 10%;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  @include paddingb_marginb(1rem, 2rem);
 }
 
 .index__textFrase--second {
@@ -60,8 +58,7 @@
 }
 
 .space__newsButton {
-  padding-bottom: 2rem;
-  margin-bottom: 1rem;
+  @include paddingb_marginb(2rem, 1rem);
 }
 
 .index__newsButton {

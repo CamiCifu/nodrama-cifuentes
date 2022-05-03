@@ -29,3 +29,15 @@ $font-sizes: (
   "bigsize": 200%,
   "hugesize": 400%,
 );
+
+/*MIXIN FOR PADDING AND MARGIN*/
+
+@mixin padding_margin($padding, $margin) {
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin paddingb_marginb($paddingb, $marginb) {
+  padding-bottom: $paddingb;
+  margin-bottom: $marginb;
+}

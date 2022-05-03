@@ -71,8 +71,7 @@ ul li a {
 }
 
 .header__image {
-  padding: 0;
-  margin: 0.1rem 0 0.1rem 0;
   size: 500%;
   text-align: center;
+  @include padding_margin(0, 0.1rem 0 0.1rem 0);
 }

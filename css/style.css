@@ -17,6 +17,7 @@ body {
 }
 
 /*MAP FOR FONT WEIGHTS*/
+/*MIXIN FOR PADDING AND MARGIN*/
 /*components*/
 /*Header*/
 header {
@@ -84,25 +85,23 @@ ul li a {
 }
 
 .header__image {
-  padding: 0;
-  margin: 0.1rem 0 0.1rem 0;
   size: 500%;
   text-align: center;
+  padding: 0;
+  margin: 0.1rem 0 0.1rem 0;
 }
 
 /* Articles*/
 .article__title {
-  padding: 4rem 0.1rem 0.1rem 0.1rem;
-  margin: 0.1rem 0 0.2rem 0.1rem;
   text-transform: capitalize;
   color: rgb(52, 14, 87);
   font-weight: bold;
   font-size: 150%;
+  /* @include padding_margin(4rem 0.1rem 0.1rem 0.1rem, 0.1rem 0 0.2rem 0.1rem);*/
 }
 
 .Article__elements {
-  margin: 1rem 0.3rem 1rem 0.3rem;
-  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  /*  @include padding_margin(0.1rem 0.1rem 0.1rem 0.1rem, 1rem 0.3rem 1rem 0.3rem);*/
 }
 
 .Article__elements__video {
@@ -170,8 +169,8 @@ ul li a {
 }
 
 .contact__main {
-  margin-bottom: 1rem;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .button {

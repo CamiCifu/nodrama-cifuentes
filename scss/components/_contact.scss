@@ -1,6 +1,5 @@
 .contact__main {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  @include paddingb_marginb(1rem, 1rem);
 }
 
 .button {
