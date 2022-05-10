@@ -3,20 +3,20 @@
 }
 
 .button {
-  background: #4c6e97;
+  background: $color--azul--claro;
   border: none;
-  color: white;
+  color: $color--blanco;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s ease;
 
   &:hover {
-    background: #27394e;
-    color: black;
+    background: $color--gris--oscuro;
+    color: $color--negro;
   }
 
   &:focus {
-    background: #364d69;
+    background: $color--azul---muy--oscuro;
     outline-style: solid;
   }
 }

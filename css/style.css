@@ -4587,11 +4587,11 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 2rem 1rem;
   font-size: 1rem;
   color: black;
   text-align: left;
-  background-color: #fff;
+  background-color: white;
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
@@ -4603,12 +4603,12 @@ textarea.form-control-lg {
   }
 }
 .accordion-button:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #e7f1ff;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  color: shade-color(black, 10%);
+  background-color: tint-color(black, 90%);
+  box-shadow: inset 0 -1rem 0 rgb(160, 184, 205);
 }
 .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='shade-color%28black, 10%%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   transform: rotate(-180deg);
 }
 .accordion-button::after {
@@ -4617,7 +4617,7 @@ textarea.form-control-lg {
   height: 1.25rem;
   margin-left: auto;
   content: "";
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='green'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a9cef4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-size: 1.25rem;
   transition: transform 0.2s ease-in-out;
@@ -4642,16 +4642,16 @@ textarea.form-control-lg {
 }
 
 .accordion-item {
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: white;
+  border: 1rem solid rgb(160, 184, 205);
 }
 .accordion-item:first-of-type {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 .accordion-item:first-of-type .accordion-button {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .accordion-item:not(:first-of-type) {
   border-top: 0;
@@ -4661,8 +4661,8 @@ textarea.form-control-lg {
   border-bottom-left-radius: 0.25rem;
 }
 .accordion-item:last-of-type .accordion-button.collapsed {
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .accordion-item:last-of-type .accordion-collapse {
   border-bottom-right-radius: 0.25rem;
@@ -4670,7 +4670,7 @@ textarea.form-control-lg {
 }
 
 .accordion-body {
-  padding: 1rem 1.25rem;
+  padding: 0.2rem 1rem;
 }
 
 .accordion-flush .accordion-collapse {
@@ -11195,10 +11195,6 @@ ul li a {
   /* @include padding_margin(4rem 0.1rem 0.1rem 0.1rem, 0.1rem 0 0.2rem 0.1rem);*/
 }
 
-.Article__elements {
-  /*  @include padding_margin(0.1rem 0.1rem 0.1rem 0.1rem, 1rem 0.3rem 1rem 0.3rem);*/
-}
-
 .Article__elements__video {
   max-width: 70%;
 }
@@ -11210,11 +11206,10 @@ ul li a {
 }
 
 /* Projects*/
-/*cambios projects para entrega animacion*/
 .projects__intro {
-  color: rgb(246, 240, 240);
+  color: white;
   font-style: italic;
-  background-color: rgb(29, 27, 79);
+  background-color: rgb(30, 66, 98);
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: 0.2rem;
@@ -11229,38 +11224,32 @@ ul li a {
 
 .projects__intro--additional {
   size: 90%;
-  font-weight: bold;
-}
-
-.projectos__texto {
-  display: inline-block;
+  font-weight: 600;
 }
 
 .project__title {
   text-transform: capitalize;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: rgb(30, 66, 98);
   font-size: 150%;
-  margin-bottom: 1rem;
-  color: black;
+  font-weight: 600;
+  background-color: #c6d9ec;
+  padding: 0.5rem;
 }
 
 .projectos__textoSpace {
-  display: inline-block;
-  padding: 3rem 1.5rem 3rem 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   margin: 0 auto;
   min-height: 15rem;
+  border: 0.3rem solid rgba(230, 230, 230, 0.93);
+  margin: 1rem;
 }
 
 .project__text {
-  padding: 1rem 0 3rem 0;
-  font-size: 120%;
+  padding: 1rem 0 1rem 0;
+  font-size: 100%;
   font-style: italic;
-  color: rgb(51, 49, 49);
-}
-
-.project__link {
-  padding: 2rem 0 2rem 0;
-  color: rgb(4, 4, 31);
+  color: rgba(60, 60, 60, 0.93);
 }
 
 .contact__main {
@@ -11269,7 +11258,7 @@ ul li a {
 }
 
 .button {
-  background: #4c6e97;
+  background: #a9cef4;
   border: none;
   color: white;
   font-size: 1rem;
@@ -11277,25 +11266,23 @@ ul li a {
   transition: all 0.5s ease;
 }
 .button:hover {
-  background: #27394e;
+  background: rgba(60, 60, 60, 0.93);
   color: black;
 }
 .button:focus {
-  background: #364d69;
+  background: rgb(30, 66, 98);
   outline-style: solid;
 }
 
 /* News*/
 .news__element, .propaganda {
-  /*display: inline-block;*/
-  padding: 1rem 3rem 1rem 3rem;
+  padding: 1rem 1rem 1rem 1rem;
   min-height: 60rem;
 }
 
 .news__elementpart {
   padding: 1rem 0 1rem 0;
-  /*display: inline-block;*/
-  border: 0.2rem solid black;
+  border-left: 0.3rem solid rgba(230, 230, 230, 0.93);
   margin: 2rem 0.2rem 2rem 0.2rem;
   width: 100%;
   min-height: 10rem;
@@ -11304,16 +11291,16 @@ ul li a {
 .news_title {
   font-weight: 600;
   font-size: 200%;
-  color: rgb(27, 27, 94);
+  color: rgb(30, 66, 98);
   font-style: italic;
   text-transform: capitalize;
-  text-align: center;
-  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  text-align: left;
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
 }
 
 .news_content {
-  font-size: 150%;
-  color: rgb(53, 49, 49);
+  font-size: 100%;
+  color: rgba(60, 60, 60, 0.93);
   text-align: justify;
   margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
@@ -11325,47 +11312,27 @@ ul li a {
   text-align: center;
 }
 
-.icon__news {
-  color: black;
-  font-size: 400%;
-  text-align: center;
-  position: center;
-}
-
-/*
-.news__organization {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-  grid-template-areas:
-    "news"
-    "propaganda";
-  min-height: 100vh;
-  grid-row-gap: 2rem;
-  justify-items: center;
-  align-items: start;
-}
-*/
-/*
-.news {
-  grid-area: news;
-}*/
 .propaganda {
   transition-property: width, height;
   transition-duration: 2s;
+  background-color: #c6d9ec;
 }
-.propaganda:hover {
+
+.icon__news {
+  color: rgb(30, 66, 98);
+  font-size: 400%;
+  text-align: center;
+  transition-property: width, height;
+  transition-duration: 2s;
+}
+.icon__news:hover {
   width: 150%;
   height: 150%;
 }
 
 .propaganda--part {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background-color: rgb(211, 208, 208);
+  display: inline-block;
+  text-align: center;
 }
 
 /*Footer*/
@@ -11468,7 +11435,6 @@ ul li a {
   background-image: url(/media/flowers.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
   position: relative;
   background-size: cover;
   width: 100%;
@@ -11523,7 +11489,7 @@ ul li a {
   display: inline-block;
   font-weight: 400;
   margin-left: 80%;
-  color: rgb(5, 5, 5);
+  color: rgba(60, 60, 60, 0.93);
   grid-area: index__newsButton;
   background: rgba(224, 231, 230, 0.6);
   text-align: center;

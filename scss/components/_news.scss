@@ -1,15 +1,13 @@
 /* News*/
 
 .news__element {
-  /*display: inline-block;*/
-  padding: 1rem 3rem 1rem 3rem;
+  padding: 1rem 1rem 1rem 1rem;
   min-height: 60rem;
 }
 
 .news__elementpart {
   padding: 1rem 0 1rem 0;
-  /*display: inline-block;*/
-  border: 0.2rem solid black;
+  border-left: 0.3rem solid $color--gris--claro;
   margin: 2rem 0.2rem 2rem 0.2rem;
   width: 100%;
   min-height: 10rem;
@@ -18,16 +16,16 @@
 .news_title {
   font-weight: map-get($font-weights, boldweight);
   font-size: map-get($font-sizes, bigsize);
-  color: rgb(27, 27, 94);
+  color: $color--azul---muy--oscuro;
   font-style: italic;
   text-transform: capitalize;
-  text-align: center;
-  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  text-align: left;
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
 }
 
 .news_content {
-  font-size: map-get($font-sizes, mediumsize);
-  color: rgb(53, 49, 49);
+  font-size: map-get($font-sizes, normalsize);
+  color: $color--gris--oscuro;
   text-align: justify;
   margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
@@ -39,37 +37,19 @@
   text-align: center;
 }
 
-.icon__news {
-  color: black;
-  font-size: map-get($font-sizes, hugesize);
-  text-align: center;
-  position: center;
-}
-
-/*
-.news__organization {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60% 40%;
-  grid-template-areas:
-    "news"
-    "propaganda";
-  min-height: 100vh;
-  grid-row-gap: 2rem;
-  justify-items: center;
-  align-items: start;
-}
-*/
-/*
-.news {
-  grid-area: news;
-}*/
-
 .propaganda {
   @extend .news__element;
   transition-property: width, height;
   transition-duration: 2s;
+  background-color: $color--azul--muy--claro;
+}
 
+.icon__news {
+  color: $color--azul---muy--oscuro;
+  font-size: map-get($font-sizes, hugesize);
+  text-align: center;
+  transition-property: width, height;
+  transition-duration: 2s;
   &:hover {
     width: 150%;
     height: 150%;
@@ -77,10 +57,6 @@
 }
 
 .propaganda--part {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background-color: rgb(211, 208, 208);
+  display: inline-block;
+  text-align: center;
 }

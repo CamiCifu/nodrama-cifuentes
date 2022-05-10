@@ -1,4 +1,15 @@
-$accordion-color: black;
-$accordion-icon-color: green;
+//ACCORDEON
+$accordion-color: $color--negro;
+$accordion-icon-color: $color--azul--claro;
+$accordion-border-color: $color--azul--oscuro;
+$accordion-button-active-color: $color--negro;
+$accordion-button-active-bg: tint-color(black, 90%);
+$accordion-button-active-color: shade-color(black, 10%);
+$accordion-padding-y: 2rem;
+$accordion-padding-x: 1rem;
+$accordion-border-width: 1rem;
+$accordion-body-padding-y: 0.2rem;
+$accordion-body-padding-x: 1rem;
+$accordion-bg: $color--blanco;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

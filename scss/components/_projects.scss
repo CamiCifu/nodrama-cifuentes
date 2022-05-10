@@ -1,11 +1,9 @@
 /* Projects*/
 
-/*cambios projects para entrega animacion*/
-
 .projects__intro {
-  color: rgb(246, 240, 240);
+  color: $color--blanco;
   font-style: italic;
-  background-color: rgb(29, 27, 79);
+  background-color: $color--azul---muy--oscuro;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: 0.2rem;
@@ -13,7 +11,6 @@
   text-align: justify;
   opacity: 0.5;
   transition: opacity 1s;
-
   &:hover {
     opacity: 1;
   }
@@ -21,35 +18,29 @@
 
 .projects__intro--additional {
   size: 90%;
-  font-weight: bold;
-}
-
-.projectos__texto {
-  display: inline-block;
+  font-weight: map-get($font-weights, boldweight);
 }
 
 .project__title {
   text-transform: capitalize;
-  font-weight: bold;
-  font-size: 150%;
-  margin-bottom: 1rem;
-  color: black;
+  margin-bottom: 0.5rem;
+  color: $color--azul---muy--oscuro;
+  font-size: map-get($font-sizes, mediumsize);
+  font-weight: map-get($font-weights, boldweight);
+  background-color: $color--azul--muy--claro;
+  padding: 0.5rem;
 }
 
 .projectos__textoSpace {
-  display: inline-block;
-  @include padding_margin(3rem 1.5rem 3rem 1.5rem, 0 auto);
+  @include padding_margin(1rem 1rem 1rem 1rem, 0 auto);
   min-height: 15rem;
+  border: 0.3rem solid $color--gris--claro;
+  margin: 1rem;
 }
 
 .project__text {
-  padding: 1rem 0 3rem 0;
-  font-size: 120%;
+  padding: 1rem 0 1rem 0;
+  font-size: map-get($font-sizes, normalsize);
   font-style: italic;
-  color: rgb(51, 49, 49);
-}
-
-.project__link {
-  padding: 2rem 0 2rem 0;
-  color: rgb(4, 4, 31);
+  color: $color--gris--oscuro;
 }
