@@ -11116,7 +11116,7 @@ textarea.form-control-lg {
 /*components*/
 /*Header*/
 header {
-  background: linear-gradient(to right, #a9cef4, rgb(160, 184, 205));
+  background: linear-gradient(to right, rgb(90, 90, 90), rgb(45, 101, 149));
   padding: 1rem 0 1rem 0;
   top: 0;
   z-index: 1;
@@ -11124,22 +11124,7 @@ header {
   border-bottom: 0.1rem solid white;
 }
 
-/*.header__parts {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-items: start;
-      justify-content: space-around;
-      align-items: center;
-    }*/
 ul {
-  /*
-      display: grid;
-      grid-template-areas:
-        " nav1 nav2"
-        " nav3 nav4"
-        "nav5 nav5";
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 1fr 1fr 1fr;*/
   align-items: center;
   justify-items: center;
 }
@@ -11152,6 +11137,10 @@ ul li {
   margin: 0.1rem 0.1rem 0.1rem 0.1rem;
   width: 8rem;
   text-align: center;
+}
+ul li a {
+  color: white;
+  font-weight: 600;
 }
 
 .nav1 {
@@ -11172,11 +11161,6 @@ ul li {
 
 .nav5 {
   grid-area: nav5;
-}
-
-ul li a {
-  color: white;
-  font-weight: 600;
 }
 
 .header__image {
@@ -11335,94 +11319,11 @@ ul li a {
   text-align: center;
 }
 
-/*Footer*/
+/*footer*/
 .background__footer {
   background-color: rgb(89, 112, 129);
 }
 
-/*
-    footer {
-      background: black;
-      padding: 0.4rem 0;
-      position: sticky;
-
-      bottom: 0;
-      margin: 0 0 0 0;
-      z-index: 1;
-      grid-area: footer;
-    }
-
-    .footer__elements {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 50% 50%;
-      grid-template-areas: "footer oner footer two";
-      align-items: center;
-    }
-
-    .footer__part--one {
-      grid-area: footer one;
-      text-align: center;
-    }
-
-    .footer__part--two {
-      grid-area: footer two;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .footer__text {
-      color: white;
-    }
-    */
-/* MainContact*/
-/*
-    .contact__fieldset {
-      margin: 3rem 0 3rem 0;
-    }
-    .contact__info {
-      padding: 1rem 2rem 1rem 2rem;
-    }
-
-    .contact__text {
-      text-transform: uppercase;
-    }
-
-    .contact__text--contactUs {
-      color: rgb(32, 8, 88);
-      size: 250%;
-      font-weight: bold;
-      text-align: center;
-      font-style: oblique;
-    }
-
-    .contact__infoFill {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact__infoFill--elements {
-      display: inline-block;
-      margin-right: 0.1rem;
-    }
-
-    .contact__text--infoFill {
-      font-weight: bold;
-    }
-
-    .contact__infoMessage {
-      font-weight: bold;
-      font-style: italic;
-      margin-bottom: 3rem;
-    }
-
-    .send__button {
-      padding: 0.1rem 1rem 0.1rem 1rem;
-      text-transform: capitalize;
-      background-color: rgba(133, 226, 109, 0.26);
-      border: 0.01rem solid black;
-    }*/
 /*Index*/
 .index__organization {
   display: flex;
@@ -11432,7 +11333,7 @@ ul li a {
 }
 
 .index__background {
-  background-image: url(/media/flowers.jpg);
+  background-image: url(/media/paisaje.jpg);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -11458,10 +11359,11 @@ ul li a {
 .index__textFrase--first {
   font-weight: 600;
   font-size: 200%;
-  color: rgb(45, 123, 191);
+  color: rgb(6, 20, 32);
   grid-area: index__textFrase--first;
-  background: rgba(224, 231, 230, 0.6);
+  background: rgba(224, 231, 230, 0.3);
   text-align: center;
+  padding: 0.2rem;
 }
 
 .space__secondText {
@@ -11474,10 +11376,11 @@ ul li a {
   display: inline-block;
   font-weight: 600;
   font-size: 150%;
-  color: rgb(45, 123, 191);
+  color: rgb(6, 20, 32);
   grid-area: index__textFrase--second;
-  background: rgba(224, 231, 230, 0.6);
+  background: rgba(224, 231, 230, 0.3);
   text-align: center;
+  padding: 0.2rem;
 }
 
 .space__newsButton {
@@ -11489,10 +11392,11 @@ ul li a {
   display: inline-block;
   font-weight: 400;
   margin-left: 80%;
-  color: rgba(60, 60, 60, 0.93);
+  color: rgb(6, 20, 32);
   grid-area: index__newsButton;
-  background: rgba(224, 231, 230, 0.6);
+  background: rgba(224, 231, 230, 0.3);
   text-align: center;
+  padding: 0.2rem;
 }
 
 .index__lowText {
