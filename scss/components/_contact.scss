@@ -1,5 +1,6 @@
 .contact__main {
   @include paddingb_marginb(1rem, 1rem);
+  min-height: 100vh;
 }
 
 .button {

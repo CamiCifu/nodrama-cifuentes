@@ -14,4 +14,5 @@
 .main__articles {
   padding-top: 3rem;
   @include paddingb_marginb(3rem, 5rem);
+  min-height: 100vh;
 }

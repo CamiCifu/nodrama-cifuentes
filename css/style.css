@@ -11116,8 +11116,8 @@ textarea.form-control-lg {
 /*components*/
 /*Header*/
 header {
-  background: linear-gradient(to right, rgb(90, 90, 90), rgb(45, 101, 149));
-  padding: 1rem 0 1rem 0;
+  background: linear-gradient(to right, rgb(93, 96, 112), rgb(38, 122, 195));
+  padding: 0.6rem 0 0.6rem 0;
   top: 0;
   z-index: 1;
   position: sticky;
@@ -11143,40 +11143,12 @@ ul li a {
   font-weight: 600;
 }
 
-.nav1 {
-  grid-area: nav1;
-}
-
-.nav2 {
-  grid-area: nav2;
-}
-
-.nav3 {
-  grid-area: nav3;
-}
-
-.nav4 {
-  grid-area: nav4;
-}
-
-.nav5 {
-  grid-area: nav5;
-}
-
-.header__image {
-  size: 500%;
-  text-align: center;
-  padding: 0;
-  margin: 0.1rem 0 0.1rem 0;
-}
-
 /* Articles*/
 .article__title {
   text-transform: capitalize;
   color: rgb(52, 14, 87);
   font-weight: bold;
   font-size: 150%;
-  /* @include padding_margin(4rem 0.1rem 0.1rem 0.1rem, 0.1rem 0 0.2rem 0.1rem);*/
 }
 
 .Article__elements__video {
@@ -11187,6 +11159,7 @@ ul li a {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 5rem;
+  min-height: 100vh;
 }
 
 /* Projects*/
@@ -11239,6 +11212,7 @@ ul li a {
 .contact__main {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  min-height: 100vh;
 }
 
 .button {
@@ -11320,20 +11294,14 @@ ul li a {
 }
 
 /*footer*/
-.background__footer {
-  background-color: rgb(89, 112, 129);
+.footer {
+  background-color: rgb(59, 124, 164);
+  height: auto;
 }
 
 /*Index*/
-.index__organization {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-
-.index__background {
-  background-image: url(/media/paisaje.jpg);
+.index__background__image {
+  background-image: url(/media/peace.jpg);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -11341,75 +11309,44 @@ ul li a {
   width: 100%;
   margin-top: 0 auto;
   height: 100%;
-}
-
-.index__text {
-  display: grid;
-  padding-top: 3rem;
-  grid-template-columns: 100%;
-  grid-template-rows: 90% 5% 5%;
-  grid-template-areas: "index__textFrase--first" "index__textFrase--second" "index__newsButton";
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .space__firstText {
   padding-bottom: 20rem;
   margin-bottom: 2rem;
+  padding-top: 3rem;
 }
 
-.index__textFrase--first {
+.style__firstText {
   font-weight: 600;
   font-size: 200%;
-  color: rgb(6, 20, 32);
-  grid-area: index__textFrase--first;
-  background: rgba(224, 231, 230, 0.3);
+  color: rgb(63, 67, 71);
+  background: rgba(152, 147, 146, 0.3);
   text-align: center;
   padding: 0.2rem;
 }
 
-.space__secondText {
-  margin-left: 10%;
-  padding-bottom: 1rem;
+.style__secondText {
+  font-weight: 800;
+  font-size: 200%;
+  color: rgb(30, 66, 98);
+  text-align: center;
+  padding: 0.2rem;
   margin-bottom: 2rem;
 }
 
-.index__textFrase--second {
-  display: inline-block;
+.style__newsButton {
   font-weight: 600;
   font-size: 150%;
-  color: rgb(6, 20, 32);
-  grid-area: index__textFrase--second;
-  background: rgba(224, 231, 230, 0.3);
+  color: rgb(63, 67, 71);
+  background: rgba(152, 147, 146, 0.3);
   text-align: center;
   padding: 0.2rem;
-}
-
-.space__newsButton {
-  padding-bottom: 2rem;
   margin-bottom: 1rem;
-}
-
-.index__newsButton {
-  display: inline-block;
-  font-weight: 400;
-  margin-left: 80%;
-  color: rgb(6, 20, 32);
-  grid-area: index__newsButton;
-  background: rgba(224, 231, 230, 0.3);
-  text-align: center;
-  padding: 0.2rem;
-}
-
-.index__lowText {
-  position: center;
-  text-align: center;
-  height: 10%;
-}
-
-.index__organization {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

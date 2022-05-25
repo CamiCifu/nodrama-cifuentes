@@ -1,14 +1,6 @@
 /*Index*/
-
-.index__organization {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-
-.index__background {
-  background-image: url(/media/paisaje.jpg);
+.index__background__image {
+  background-image: url(/media/peace.jpg);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -16,72 +8,41 @@
   width: 100%;
   margin-top: 0 auto;
   height: 100%;
-}
-
-.index__text {
-  display: grid;
-  padding-top: 3rem;
-  grid-template-columns: 100%;
-  grid-template-rows: 90% 5% 5%;
-  grid-template-areas:
-    "index__textFrase--first"
-    "index__textFrase--second"
-    "index__newsButton";
-}
-
-.space__firstText {
-  @include paddingb_marginb(20rem, 2rem);
-}
-.index__textFrase--first {
-  font-weight: map-get($font-weights, boldweight);
-  font-size: map-get($font-sizes, bigsize);
-  color: $color--inicio;
-  grid-area: index__textFrase--first;
-  background: $color--fondo--incio;
-  text-align: center;
-  padding: 0.2rem;
-}
-
-.space__secondText {
-  margin-left: 10%;
-  @include paddingb_marginb(1rem, 2rem);
-}
-
-.index__textFrase--second {
-  display: inline-block;
-  font-weight: map-get($font-weights, boldweight);
-  font-size: map-get($font-sizes, mediumsize);
-  color: $color--inicio;
-  grid-area: index__textFrase--second;
-  background: $color--fondo--incio;
-  text-align: center;
-  padding: 0.2rem;
-}
-
-.space__newsButton {
-  @include paddingb_marginb(2rem, 1rem);
-}
-
-.index__newsButton {
-  display: inline-block;
-  font-weight: map-get($font-weights, mediumweight);
-  margin-left: 80%;
-  color: $color--inicio;
-  grid-area: index__newsButton;
-  background: $color--fondo--incio;
-  text-align: center;
-  padding: 0.2rem;
-}
-
-.index__lowText {
-  position: center;
-  text-align: center;
-  height: 10%;
-}
-
-.index__organization {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+}
+
+.space__firstText {
+  @include paddingb_marginb(20rem, 2rem);
+  padding-top: 3rem;
+}
+
+.style__firstText {
+  font-weight: map-get($font-weights, boldweight);
+  font-size: map-get($font-sizes, bigsize);
+  color: $color--inicio;
+  background: $color--fondo--incio;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+.style__secondText {
+  font-weight: map-get($font-weights, veryboldweight);
+  font-size: map-get($font-sizes, bigsize);
+  color: $color--azul---muy--oscuro;
+  text-align: center;
+  padding: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.style__newsButton {
+  font-weight: map-get($font-weights, boldweight);
+  font-size: map-get($font-sizes, mediumsize);
+  color: $color--inicio;
+  background: $color--fondo--incio;
+  text-align: center;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
 }

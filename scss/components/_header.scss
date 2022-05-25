@@ -3,10 +3,10 @@
 header {
   background: linear-gradient(
     to right,
-    $color--gris--oscuro--header,
+    $color--gris--claro--header,
     $color--azul--oscuro--header
   );
-  padding: 1rem 0 1rem 0;
+  padding: 0.6rem 0 0.6rem 0;
   top: 0;
   z-index: 1;
   position: sticky;
@@ -31,30 +31,4 @@ ul {
       font-weight: map-get($font-weights, boldweight);
     }
   }
-}
-
-.nav1 {
-  grid-area: nav1;
-}
-
-.nav2 {
-  grid-area: nav2;
-}
-
-.nav3 {
-  grid-area: nav3;
-}
-
-.nav4 {
-  grid-area: nav4;
-}
-
-.nav5 {
-  grid-area: nav5;
-}
-
-.header__image {
-  size: 500%;
-  text-align: center;
-  @include padding_margin(0, 0.1rem 0 0.1rem 0);
 }
