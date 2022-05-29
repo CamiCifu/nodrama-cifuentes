@@ -12,4 +12,9 @@ $accordion-body-padding-y: 0.2rem;
 $accordion-body-padding-x: 1rem;
 $accordion-bg: $color--blanco;
 
+.accordion {
+  z-index: 0;
+  position: relative;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap";

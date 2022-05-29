@@ -11,6 +11,9 @@
   margin: 2rem 0.2rem 2rem 0.2rem;
   width: 100%;
   min-height: 10rem;
+  @media (min-width: 768px) {
+    margin: 2rem 0rem 2rem 0rem;
+  }
 }
 
 .news_title {
@@ -30,33 +33,57 @@
   margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
-.news__aboutUs {
-  color: rgb(48, 8, 8);
-  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-  margin: 3rem 0rem 3rem 0rem;
+.propaganda {
+  align-self: flex-start;
+  margin: 0.1rem 0rem 1rem 0rem;
+  border: 1px solid $color--gris--oscuro;
+  padding: 10px;
+  border-radius: 40px 10px;
   text-align: center;
+  background: linear-gradient(
+    to bottom,
+    $color--azul--oscuro,
+    $color--azul--muy--claro
+  );
+  transition: background-color, 3s;
+  &:hover {
+    background: $color--naranja--suave;
+  }
+  @media (min-width: 768px) {
+    overflow: hidden;
+    position: sticky;
+    top: 20%;
+    margin: 0.1rem 0.1rem 1rem 0.1rem;
+  }
 }
 
-.propaganda {
-  @extend .news__element;
-  transition-property: width, height;
-  transition-duration: 2s;
-  background-color: $color--azul--muy--claro;
+.news__aboutUs {
+  color: $color--negro;
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  margin: 0.1rem 0rem 0.1rem 0rem;
+  text-align: center;
+  font-weight: map-get($font-weights, boldweight);
+  font-size: map-get($font-sizes, mediumsize);
+  @media (min-width: 768px) {
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    margin: 1rem 0rem 3rem 0rem;
+  }
 }
 
 .icon__news {
   color: $color--azul---muy--oscuro;
-  font-size: map-get($font-sizes, hugesize);
+  font-size: map-get($font-sizes, phonesize);
   text-align: center;
-  transition-property: width, height;
-  transition-duration: 2s;
-  &:hover {
-    width: 150%;
-    height: 150%;
+  @media (min-width: 768px) {
+    font-size: map-get($font-sizes, superhugesize);
   }
 }
 
 .propaganda--part {
   display: inline-block;
   text-align: center;
+}
+
+.container {
+  position: relative;
 }

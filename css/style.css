@@ -19,6 +19,11 @@ body {
 
 /*MAP FOR FONT WEIGHTS*/
 /*MIXIN FOR PADDING AND MARGIN*/
+.accordion {
+  z-index: 0;
+  position: relative;
+}
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -7467,8 +7472,20 @@ textarea.form-control-lg {
   font-size: 200% !important;
 }
 
+.fs-biggersize {
+  font-size: 300% !important;
+}
+
 .fs-hugesize {
   font-size: 400% !important;
+}
+
+.fs-superhugesize {
+  font-size: 900% !important;
+}
+
+.fs-phonesize {
+  font-size: 1500% !important;
 }
 
 .fst-italic {
@@ -11116,7 +11133,7 @@ textarea.form-control-lg {
 /*components*/
 /*Header*/
 header {
-  background: linear-gradient(to right, rgb(93, 96, 112), rgb(38, 122, 195));
+  background: linear-gradient(to right, rgb(93, 96, 112), rgb(28, 128, 216));
   padding: 0.6rem 0 0.6rem 0;
   top: 0;
   z-index: 1;
@@ -11146,9 +11163,10 @@ ul li a {
 /* Articles*/
 .article__title {
   text-transform: capitalize;
-  color: rgb(52, 14, 87);
-  font-weight: bold;
+  color: rgb(30, 66, 98);
+  font-weight: 600;
   font-size: 150%;
+  background-color: #c6d9ec;
 }
 
 .Article__elements__video {
@@ -11156,10 +11174,10 @@ ul li a {
 }
 
 .main__articles {
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 3rem;
   margin-bottom: 5rem;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 /* Projects*/
@@ -11167,21 +11185,30 @@ ul li a {
   color: white;
   font-style: italic;
   background-color: rgb(30, 66, 98);
+  font-size: 150%;
+  font-weight: 600;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-transform: uppercase;
   margin-top: 0.2rem;
-  padding: 1rem 1rem 1rem 1rem;
-  text-align: justify;
+  padding: 0.1rem 3rem 0.1rem 3rem;
+  text-align: center;
   opacity: 0.5;
   transition: opacity 1s;
 }
 .projects__intro:hover {
   opacity: 1;
 }
+@media (min-width: 768px) {
+  .projects__intro {
+    font-size: 200%;
+  }
+}
 
 .projects__intro--additional {
-  size: 90%;
-  font-weight: 600;
+  font-size: 100%;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .project__title {
@@ -11195,11 +11222,25 @@ ul li a {
 }
 
 .projectos__textoSpace {
-  padding: 1rem 1rem 1rem 1rem;
-  margin: 0 auto;
-  min-height: 15rem;
-  border: 0.3rem solid rgba(230, 230, 230, 0.93);
-  margin: 1rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  margin: 0.5rem 1rem 0 1rem;
+  min-height: 5rem;
+  border: 0.1rem solid rgba(230, 230, 230, 0.93);
+  transition: transform 1s, z-index 1s, background-color 1s, border-color 1s;
+}
+@media (min-width: 768px) {
+  .projectos__textoSpace {
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 0 1rem;
+    min-height: 15rem;
+    border: 0.3rem solid rgba(230, 230, 230, 0.93);
+  }
+}
+.projectos__textoSpace:hover {
+  transform: scale(1.08);
+  z-index: 2;
+  background-color: rgba(230, 230, 230, 0.93);
+  border-color: rgb(28, 128, 216);
 }
 
 .project__text {
@@ -11212,7 +11253,12 @@ ul li a {
 .contact__main {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  min-height: 100vh;
+  min-height: 75vh;
+}
+@media (min-width: 1200px) {
+  .contact__main {
+    min-height: 80vh;
+  }
 }
 
 .button {
@@ -11233,7 +11279,7 @@ ul li a {
 }
 
 /* News*/
-.news__element, .propaganda {
+.news__element {
   padding: 1rem 1rem 1rem 1rem;
   min-height: 60rem;
 }
@@ -11244,6 +11290,11 @@ ul li a {
   margin: 2rem 0.2rem 2rem 0.2rem;
   width: 100%;
   min-height: 10rem;
+}
+@media (min-width: 768px) {
+  .news__elementpart {
+    margin: 2rem 0rem 2rem 0rem;
+  }
 }
 
 .news_title {
@@ -11263,29 +11314,52 @@ ul li a {
   margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
-.news__aboutUs {
-  color: rgb(48, 8, 8);
-  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-  margin: 3rem 0rem 3rem 0rem;
+.propaganda {
+  align-self: flex-start;
+  margin: 0.1rem 0rem 1rem 0rem;
+  border: 1px solid rgba(60, 60, 60, 0.93);
+  padding: 10px;
+  border-radius: 40px 10px;
   text-align: center;
+  background: linear-gradient(to bottom, rgb(160, 184, 205), #c6d9ec);
+  transition: background-color, 3s;
+}
+.propaganda:hover {
+  background: rgb(251, 207, 126);
+}
+@media (min-width: 768px) {
+  .propaganda {
+    overflow: hidden;
+    position: sticky;
+    top: 20%;
+    margin: 0.1rem 0.1rem 1rem 0.1rem;
+  }
 }
 
-.propaganda {
-  transition-property: width, height;
-  transition-duration: 2s;
-  background-color: #c6d9ec;
+.news__aboutUs {
+  color: black;
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  margin: 0.1rem 0rem 0.1rem 0rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 150%;
+}
+@media (min-width: 768px) {
+  .news__aboutUs {
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    margin: 1rem 0rem 3rem 0rem;
+  }
 }
 
 .icon__news {
   color: rgb(30, 66, 98);
-  font-size: 400%;
+  font-size: 1500%;
   text-align: center;
-  transition-property: width, height;
-  transition-duration: 2s;
 }
-.icon__news:hover {
-  width: 150%;
-  height: 150%;
+@media (min-width: 768px) {
+  .icon__news {
+    font-size: 900%;
+  }
 }
 
 .propaganda--part {
@@ -11293,10 +11367,15 @@ ul li a {
   text-align: center;
 }
 
+.container {
+  position: relative;
+}
+
 /*footer*/
 .footer {
-  background-color: rgb(59, 124, 164);
+  background-color: rgb(38, 122, 195);
   height: auto;
+  z-index: 1;
 }
 
 /*Index*/
@@ -11308,11 +11387,16 @@ ul li a {
   background-size: cover;
   width: 100%;
   margin-top: 0 auto;
-  height: 100%;
+  min-height: 78vh;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+}
+@media (min-width: 768px) {
+  .index__background__image {
+    min-height: 85vh;
+  }
 }
 
 .space__firstText {
@@ -11324,29 +11408,43 @@ ul li a {
 .style__firstText {
   font-weight: 600;
   font-size: 200%;
-  color: rgb(63, 67, 71);
-  background: rgba(152, 147, 146, 0.3);
+  color: rgb(28, 128, 216);
   text-align: center;
   padding: 0.2rem;
+}
+@media (min-width: 992px) {
+  .style__firstText {
+    font-size: 300%;
+  }
 }
 
 .style__secondText {
   font-weight: 800;
-  font-size: 200%;
+  font-size: 150%;
   color: rgb(30, 66, 98);
   text-align: center;
   padding: 0.2rem;
   margin-bottom: 2rem;
 }
+@media (min-width: 992px) {
+  .style__secondText {
+    font-size: 200%;
+  }
+}
 
 .style__newsButton {
   font-weight: 600;
   font-size: 150%;
-  color: rgb(63, 67, 71);
-  background: rgba(152, 147, 146, 0.3);
+  color: rgb(28, 128, 216);
+  background: rgba(152, 147, 146, 0.8);
   text-align: center;
   padding: 0.2rem;
   margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .style__newsButton {
+    background: rgba(152, 147, 146, 0.516);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

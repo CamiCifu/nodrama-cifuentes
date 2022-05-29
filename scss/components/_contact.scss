@@ -1,6 +1,9 @@
 .contact__main {
   @include paddingb_marginb(1rem, 1rem);
-  min-height: 100vh;
+  min-height: 75vh;
+  @media (min-width: 1200px) {
+    min-height: 80vh;
+  }
 }
 
 .button {
