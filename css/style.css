@@ -11380,7 +11380,7 @@ ul li a {
 
 /*Index*/
 .index__background__image {
-  background: url("../../media/peace.jpg");
+  background: url("/media/peace.jpg");
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
