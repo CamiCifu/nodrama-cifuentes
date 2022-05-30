@@ -39,22 +39,20 @@
 }
 
 .projectos__textoSpace {
-  @include padding_margin(0.2rem 0.2rem 0.2rem 0.2rem, 0.5rem 1rem 0 1rem);
+  @include padding_margin(0.2rem 0.2rem 0.2rem 0.2rem, 2rem 1rem 2rem 1rem);
   min-height: 5rem;
-  border: 0.1rem solid $color--gris--claro;
-
-  @media (min-width: 768px) {
-    @include padding_margin(1rem 1rem 1rem 1rem, 1rem 1rem 0 1rem);
-    min-height: 15rem;
-    border: 0.3rem solid $color--gris--claro;
-  }
-
+  border: 0.1rem solid $color--gris--oscuro;
+  box-shadow: 5px 5px $color--azul--claro;
   transition: transform 1s, z-index 1s, background-color 1s, border-color 1s;
   &:hover {
     transform: scale(1.08);
     z-index: 2;
     background-color: $color--gris--claro;
     border-color: $color--azul--oscuro--header;
+  }
+  @media (min-width: 768px) {
+    @include padding_margin(1rem 1rem 1rem 1rem, 3rem 1rem 3rem 1rem);
+    min-height: 15rem;
   }
 }
 

@@ -11223,24 +11223,24 @@ ul li a {
 
 .projectos__textoSpace {
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-  margin: 0.5rem 1rem 0 1rem;
+  margin: 2rem 1rem 2rem 1rem;
   min-height: 5rem;
-  border: 0.1rem solid rgba(230, 230, 230, 0.93);
+  border: 0.1rem solid rgba(60, 60, 60, 0.93);
+  box-shadow: 5px 5px #a9cef4;
   transition: transform 1s, z-index 1s, background-color 1s, border-color 1s;
-}
-@media (min-width: 768px) {
-  .projectos__textoSpace {
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 1rem 1rem 0 1rem;
-    min-height: 15rem;
-    border: 0.3rem solid rgba(230, 230, 230, 0.93);
-  }
 }
 .projectos__textoSpace:hover {
   transform: scale(1.08);
   z-index: 2;
   background-color: rgba(230, 230, 230, 0.93);
   border-color: rgb(28, 128, 216);
+}
+@media (min-width: 768px) {
+  .projectos__textoSpace {
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 3rem 1rem 3rem 1rem;
+    min-height: 15rem;
+  }
 }
 
 .project__text {
@@ -11259,6 +11259,12 @@ ul li a {
   .contact__main {
     min-height: 80vh;
   }
+}
+
+.title__contact {
+  color: rgb(28, 128, 216);
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 .button {
@@ -11380,9 +11386,7 @@ ul li a {
 
 /*Index*/
 .index__background__image {
-  /*background-image: url(https://tinyurl.com/jp56xcg);*/
   background-image: url(https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
-  /*background-image: url(../media/paisaje.jpg);*/
   background-position: center;
   background-repeat: no-repeat;
   position: relative;

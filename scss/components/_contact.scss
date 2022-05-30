@@ -6,6 +6,12 @@
   }
 }
 
+.title__contact {
+  color: $color--azul--oscuro--header;
+  font-weight: map-get($font-weights, boldweight);
+  margin-top: 2rem;
+}
+
 .button {
   background: $color--azul--claro;
   border: none;
