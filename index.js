@@ -126,3 +126,9 @@ respuestasFormulario.push(consulta1);
 respuestasFormulario.push(consulta2);
 
 console.log(respuestasFormulario);
+
+//Agrego busqueda
+const consultasOther = respuestasFormulario.find(
+  (m) => m.validarMotivo === "Other"
+);
+console.log(consultasOther);
