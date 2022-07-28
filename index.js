@@ -76,7 +76,7 @@ function consultaFormulario() {
     let nombre = prompt("Decime tu nombre");
     while (nombre === "" || nombre.trim().length === 0) {
       alert("Por favor re-escribi tu nombre.");
-      let = nombre = prompt("Decime tu nombre");
+      nombre = prompt("Decime tu nombre");
     }
     return nombre;
   })();
@@ -85,7 +85,7 @@ function consultaFormulario() {
     let email = prompt("Decime tu email");
     while (email === "" || email.trim().length === 0) {
       alert("Por favor re-escribi tu email.");
-      let = email = prompt("Decime tu email");
+      email = prompt("Decime tu email");
     }
     return email;
   })();
@@ -101,7 +101,7 @@ function consultaFormulario() {
     let pais = prompt("Decime el pais");
     while (pais === "" || pais.trim().length === 0) {
       alert("Por favor decime el pais.");
-      let = pais = prompt("Decime el pais");
+      pais = prompt("Decime el pais");
     }
     return pais;
   })();
@@ -110,7 +110,7 @@ function consultaFormulario() {
     let mensaje = prompt("Decime el mensaje");
     while (mensaje === "" || mensaje.trim().length === 0) {
       alert("Por favor decime el mensaje.");
-      let = mensaje = prompt("Decime el mensaje");
+      mensaje = prompt("Decime el mensaje");
     }
     return mensaje;
   })();
