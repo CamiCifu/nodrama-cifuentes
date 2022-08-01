@@ -67,8 +67,8 @@ let mensajeFormulario = validarMensaje(mensaje);
 */
 
 //PRACTICA ARRAYS Y OBJETOS
-
-respuestasFormulario = [];
+//declaro variable
+const respuestasFormulario = [];
 
 function consultaFormulario() {
   this.bienvenido = alert("Hola, bienvenido a la sección de consultas");
