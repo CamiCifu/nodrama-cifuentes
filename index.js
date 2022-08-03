@@ -140,3 +140,8 @@ console.log(respuestasFormulario);
 //Agrego busqueda
 const consultasOther = respuestasFormulario.find((m) => m.motivo === "Other");
 console.log(consultasOther);
+
+//Primeros puntos con DOM
+let parte = document.getElementsByClassName("footer");
+console.log(parte[0].innerHTML);
+parte[0].innerHTML = "Este es el footer";
