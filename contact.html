@@ -69,13 +69,13 @@
       <div class="container">
           <section>
               <h2 class="title__contact column">Contact us</h2>
-            <form>
+            <form id="formularioContact">
               <div class="row">
                 <div class="col-lg-6 mt-4 ">
-                  <input type="text" class="form-control" placeholder="Name" name="name">
+                  <input type="text" class="form-control" placeholder="Name" name="name" id="formName">
                 </div>
                 <div class="col-lg-6 mt-4 ">
-                  <input type="text" class="form-control" placeholder="Email" name="email">
+                  <input type="text" class="form-control" placeholder="Email" name="email" id="formEmail">
                 </div>
                 <div class="col-lg-6 mt-4 ">
                   <select class="form-select" aria-label="Default select example">
@@ -386,7 +386,7 @@
                 <label class="mt-4" for="comment">Comments</label>
                 <textarea class="form-control mt-2" rows="5" id="comment" name="text"></textarea>
               </div>
-              <button type="submit" class="btn button mt-4">Submit</button>
+              <button type="submit" class="btn button mt-4"  id="formSubmit">Submit</button>
             </form>
           </section>
       </div>

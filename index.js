@@ -68,6 +68,9 @@ let mensajeFormulario = validarMensaje(mensaje);
 
 //PRACTICA ARRAYS Y OBJETOS
 //declaro variable
+
+/*
+
 const respuestasFormulario = [];
 
 function consultaFormulario() {
@@ -145,3 +148,19 @@ console.log(consultasOther);
 let parte = document.getElementsByClassName("footer");
 console.log(parte[0].innerHTML);
 parte[0].innerHTML = "Este es el footer";
+*/
+
+//Aplicando DOM y eventos al form de Contact
+
+let respuestasFormName = document.getElementById("formName");
+respuestasFormName.addEventListener("input", () => {
+  console.log(respuestasFormName.value);
+});
+let respuestasFormEmail = document.getElementById("formEmail");
+respuestasFormEmail.addEventListener("input", () => {
+  console.log(respuestasFormEmail.value);
+});
+
+let botonFormulario = document.getElementById("formSubmit");
+botonFormulario.onclick = () => console.log("Click");
+botonFormulario.onmousemove = () => console.log("Move");
