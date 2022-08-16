@@ -152,15 +152,56 @@ parte[0].innerHTML = "Este es el footer";
 
 //Aplicando DOM y eventos al form de Contact
 
-let respuestasFormName = document.getElementById("formName");
-respuestasFormName.addEventListener("input", () => {
-  console.log(respuestasFormName.value);
-});
-let respuestasFormEmail = document.getElementById("formEmail");
-respuestasFormEmail.addEventListener("input", () => {
-  console.log(respuestasFormEmail.value);
-});
+let formulario = document.getElementById("formularioContact");
 
-let botonFormulario = document.getElementById("formSubmit");
-botonFormulario.onclick = () => console.log("Click");
-botonFormulario.onmousemove = () => console.log("Move");
+let respuestasFormName = document.getElementById("formName");
+
+let respuestasFormEmail = document.getElementById("formEmail");
+/*
+
+let respuestasFormMotivo = document.getElementById("formMotivo");
+
+let respuestasFormPais = document.getElementById("formPais");*/
+
+let mensajeError = document.querySelector(".errorFormulario");
+
+formulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e) {
+  e.preventDefault();
+  console.log(e);
+  let formArray = e.target;
+  let nombreUsuario = formArray[0];
+  /*
+  let emailUsuario = formArray[1];
+  let motivoUsuario = formArray[2];
+  let paisUsuario = formArray[3];
+
+  console.log(nombreUsuario.value);
+  console.log(emailUsuario.value);
+  console.log(motivoUsuario.value);
+  console.log(paisUsuario.value);
+*/
+  if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " El nombre que ingresaste no es valido";
+    mensajeError.style.color = "red";
+  } else {
+    mensajeError.style.display = "none";
+  }
+  /*
+  if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " El email que ingresaste no es valido";
+    mensajeError.style.color = "red";
+  } else {
+    mensajeError.style.display = "none";
+  }
+
+  if (motivoUsuario.value === "Suggestion") {
+    alert("Seleccionaste Suggestion");
+  } else if (motivoUsuario.value === "Complaint") {
+    alert("Seleccionaste Complaint");
+  } else alert("Seleccionaste Other");
+  */
+}
