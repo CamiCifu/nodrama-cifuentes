@@ -157,11 +157,12 @@ let formulario = document.getElementById("formularioContact");
 let respuestasFormName = document.getElementById("formName");
 
 let respuestasFormEmail = document.getElementById("formEmail");
-/*
 
 let respuestasFormMotivo = document.getElementById("formMotivo");
 
-let respuestasFormPais = document.getElementById("formPais");*/
+let respuestasFormPais = document.getElementById("formPais");
+
+let respuestasFormMensaje = document.getElementById("formMensaje");
 
 let mensajeError = document.querySelector(".errorFormulario");
 
@@ -171,17 +172,13 @@ function validarFormulario(e) {
   e.preventDefault();
   console.log(e);
   let formArray = e.target;
+
   let nombreUsuario = formArray[0];
-  /*
   let emailUsuario = formArray[1];
   let motivoUsuario = formArray[2];
   let paisUsuario = formArray[3];
+  let mensajeUsuario = formArray[4];
 
-  console.log(nombreUsuario.value);
-  console.log(emailUsuario.value);
-  console.log(motivoUsuario.value);
-  console.log(paisUsuario.value);
-*/
   if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El nombre que ingresaste no es valido";
@@ -189,7 +186,7 @@ function validarFormulario(e) {
   } else {
     mensajeError.style.display = "none";
   }
-  /*
+
   if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El email que ingresaste no es valido";
@@ -198,10 +195,44 @@ function validarFormulario(e) {
     mensajeError.style.display = "none";
   }
 
-  if (motivoUsuario.value === "Suggestion") {
-    alert("Seleccionaste Suggestion");
-  } else if (motivoUsuario.value === "Complaint") {
-    alert("Seleccionaste Complaint");
-  } else alert("Seleccionaste Other");
-  */
+  if (motivoUsuario.value === "Motive") {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Selecciona un motivo de consulta";
+    mensajeError.style.color = "red";
+  } else {
+    mensajeError.style.display = "none";
+  }
+
+  if (
+    paisUsuario.value === "" ||
+    paisUsuario.value.trim().length === 0 ||
+    paisUsuario.value === "Country"
+  ) {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Selecciona un pais";
+    mensajeError.style.color = "red";
+  } else {
+    mensajeError.style.display = "none";
+  }
+
+  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length === 0) {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Escribi un mensaje valido";
+    mensajeError.style.color = "red";
+  } else {
+    mensajeError.style.display = "none";
+  }
+
+  const respuestaFormulario = {
+    nombre: nombreUsuario.value,
+    email: emailUsuario.value,
+    motivo: motivoUsuario.value,
+    pais: paisUsuario.value,
+    mensaje: mensajeUsuario.value,
+  };
+
+  //storage
+  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+
+  sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
 }
