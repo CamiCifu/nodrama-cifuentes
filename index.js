@@ -186,7 +186,7 @@ function validarFormulario(e) {
   } else {
     mensajeError.style.display = "none";
   }
-
+  /*
   if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El email que ingresaste no es valido";
@@ -214,8 +214,8 @@ function validarFormulario(e) {
   } else {
     mensajeError.style.display = "none";
   }
-
-  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length === 0) {
+*/
+  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " Escribi un mensaje valido";
     mensajeError.style.color = "red";
