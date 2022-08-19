@@ -174,12 +174,21 @@ function validarFormulario(e) {
   e.preventDefault();
   console.log(e);
   let formArray = e.target;
+  let [
+    nombreUsuario,
+    emailUsuario,
+    motivoUsuario,
+    paisUsuario,
+    mensajeUsuario,
+  ] = formArray;
+  console.log(nombreUsuario.value);
 
+  /*
   let nombreUsuario = formArray[0];
   let emailUsuario = formArray[1];
   let motivoUsuario = formArray[2];
   let paisUsuario = formArray[3];
-  let mensajeUsuario = formArray[4];
+  let mensajeUsuario = formArray[4];*/
 
   if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
