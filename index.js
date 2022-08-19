@@ -174,6 +174,7 @@ function validarFormulario(e) {
   e.preventDefault();
   console.log(e);
   let formArray = e.target;
+
   let [
     nombreUsuario,
     emailUsuario,
@@ -241,6 +242,9 @@ function validarFormulario(e) {
     pais: paisUsuario.value,
     mensaje: mensajeUsuario.value,
   };
+
+  const respuesta2 = { ...respuestaFormulario };
+  console.log(respuesta2);
 
   //storage
   let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
