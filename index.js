@@ -152,6 +152,8 @@ parte[0].innerHTML = "Este es el footer";
 
 //Aplicando DOM y eventos al form de Contact
 
+alert("Hola, bienvenido a la sección de consultas");
+
 let formulario = document.getElementById("formularioContact");
 
 let respuestasFormName = document.getElementById("formName");
@@ -186,7 +188,7 @@ function validarFormulario(e) {
   } else {
     mensajeError.style.display = "none";
   }
-  /*
+
   if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El email que ingresaste no es valido";
@@ -195,7 +197,7 @@ function validarFormulario(e) {
     mensajeError.style.display = "none";
   }
 
-  if (motivoUsuario.value === "Motive") {
+  if (motivoUsuario.value === "Please select a motive") {
     mensajeError.style.display = "block";
     mensajeError.innerText = " Selecciona un motivo de consulta";
     mensajeError.style.color = "red";
@@ -214,7 +216,7 @@ function validarFormulario(e) {
   } else {
     mensajeError.style.display = "none";
   }
-*/
+
   if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " Escribi un mensaje valido";
@@ -234,5 +236,18 @@ function validarFormulario(e) {
   //storage
   let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
 
+  /*
+  if (respuestaFormGuardada != "") {
+    MensajesEnviados = "Hay mensajes para leer";
+    console.log(MensajesEnviados);
+  }
+*/
   sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
+
+  let MensajesEnviados = "";
+
+  respuestaFormGuardada != ""
+    ? (MensajesEnviados = "Hay mensajes para leer")
+    : (MensajesEnviados = "No hay mensajes para leer");
+  console.log(MensajesEnviados);
 }
