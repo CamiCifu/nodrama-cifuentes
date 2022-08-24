@@ -168,6 +168,8 @@ let respuestasFormMensaje = document.getElementById("formMensaje");
 
 let mensajeError = document.querySelector(".errorFormulario");
 
+let alertaSubmit = document.getElementById("formSubmit");
+
 formulario.addEventListener("submit", validarFormulario);
 
 function validarFormulario(e) {
@@ -263,4 +265,13 @@ function validarFormulario(e) {
     ? (MensajesEnviados = "Hay mensajes para leer")
     : (MensajesEnviados = "No hay mensajes para leer");
   console.log(MensajesEnviados);
+
+  alertaSubmit.onclick = (e) => {
+    swal({
+      title: "Thank you!",
+      text: "Your consult has been sent!",
+      icon: "success",
+      button: "OK",
+    });
+  };
 }
