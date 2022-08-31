@@ -152,6 +152,7 @@ parte[0].innerHTML = "Este es el footer";
 
 //Aplicando DOM y eventos al form de Contact
 
+/*
 alert("Hola, bienvenido a la sección de consultas");
 
 let formulario = document.getElementById("formularioContact");
@@ -193,70 +194,71 @@ function validarFormulario(e) {
   let paisUsuario = formArray[3];
   let mensajeUsuario = formArray[4];*/
 
-  if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " El nombre que ingresaste no es valido";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
+/*
+if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " El nombre que ingresaste no es valido";
+  mensajeError.style.color = "red";
+} else {
+  mensajeError.style.display = "none";
+}
 
-  if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " El email que ingresaste no es valido";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
+if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " El email que ingresaste no es valido";
+  mensajeError.style.color = "red";
+} else {
+  mensajeError.style.display = "none";
+}
 
-  if (motivoUsuario.value === "Please select a motive") {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Selecciona un motivo de consulta";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
+if (motivoUsuario.value === "Please select a motive") {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Selecciona un motivo de consulta";
+  mensajeError.style.color = "red";
+} else {
+  mensajeError.style.display = "none";
+}
 
-  if (
-    paisUsuario.value === "" ||
-    paisUsuario.value.trim().length === 0 ||
-    paisUsuario.value === "Country"
-  ) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Selecciona un pais";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
+if (
+  paisUsuario.value === "" ||
+  paisUsuario.value.trim().length === 0 ||
+  paisUsuario.value === "Country"
+) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Selecciona un pais";
+  mensajeError.style.color = "red";
+} else {
+  mensajeError.style.display = "none";
+}
 
-  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Escribi un mensaje valido";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
+if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Escribi un mensaje valido";
+  mensajeError.style.color = "red";
+} else {
+  mensajeError.style.display = "none";
+}
 
-  const respuestaFormulario = {
-    nombre: nombreUsuario.value,
-    email: emailUsuario.value,
-    motivo: motivoUsuario.value,
-    pais: paisUsuario.value,
-    mensaje: mensajeUsuario.value,
-  };
+const respuestaFormulario = {
+  nombre: nombreUsuario.value,
+  email: emailUsuario.value,
+  motivo: motivoUsuario.value,
+  pais: paisUsuario.value,
+  mensaje: mensajeUsuario.value,
+};
 
-  const respuesta2 = { ...respuestaFormulario };
-  console.log(respuesta2);
+const respuesta2 = { ...respuestaFormulario };
+console.log(respuesta2);
 
-  //storage
-  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+//storage
+let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
 
-  /*
+/*
   if (respuestaFormGuardada != "") {
     MensajesEnviados = "Hay mensajes para leer";
     console.log(MensajesEnviados);
   }
-*/
+
   sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
 
   let MensajesEnviados = "";
@@ -275,3 +277,18 @@ function validarFormulario(e) {
     });
   };
 }
+
+*/
+
+let url = "http://hp-api.herokuapp.com/api/characters";
+let agregarPersonaje = document.getElementById("nombreHP");
+fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((json) => {
+    const daniel = json[0];
+    console.log(daniel.actor);
+    console.log(typeof daniel);
+    agregarPersonaje.innerHTML = "<h2> ${daniel.actor} </h2>";
+  });
