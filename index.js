@@ -166,20 +166,6 @@ let mensajeError = document.querySelector(".errorFormulario");
 let alertaSubmit = document.getElementById("formSubmit");
 
 formulario.addEventListener("submit", validarFormulario);
-let pais = "";
-let mensaje = "";
-
-/*
-const validarPais = (pais) => {
-  while (pais === "" || pais.trim().length === 0 || pais === "Country") {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Selecciona un pais";
-    mensajeError.style.color = "red";
-  }
-  /*mensajeError.style.display = "none";
-  pais = "";
-};
-*/
 
 function validarFormulario(e) {
   e.preventDefault();
@@ -195,90 +181,89 @@ function validarFormulario(e) {
   ] = formArray;
   console.log(nombreUsuario.value);
 
-  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Escribi un mensaje valido";
-    mensajeError.style.color = "red";
-    mensajeUsuario.value.focus();
-  } else {
-    mensajeError.style.display = "none";
-  }
-
   if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El nombre que ingresaste no es valido";
     mensajeError.style.color = "red";
-    nombreUsuario.value.focus();
   } else {
     mensajeError.style.display = "none";
   }
-
-  if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " El email que ingresaste no es valido";
-    mensajeError.style.color = "red";
-    emailUsuario.value.focus();
-  } else {
-    mensajeError.style.display = "none";
-  }
-
-  if (motivoUsuario.value === "Please select a motive") {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Selecciona un motivo de consulta";
-    mensajeError.style.color = "red";
-    motivoUsuario.value.focus();
-  } else {
-    mensajeError.style.display = "none";
-  }
-
-  if (
-    paisUsuario.value === "" ||
-    paisUsuario.value.trim().length === 0 ||
-    paisUsuario.value === "Country"
-  ) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Selecciona un pais";
-    mensajeError.style.color = "red";
-    paisUsuario.value.focus();
-  } else {
-    mensajeError.style.display = "none";
-  }
-
-  const respuestaFormulario = {
-    nombre: nombreUsuario.value,
-    email: emailUsuario.value,
-    motivo: motivoUsuario.value,
-    pais: paisUsuario.value,
-    mensaje: mensajeUsuario.value,
-  };
-
-  const respuesta2 = { ...respuestaFormulario };
-  console.log(respuesta2);
-
-  //storage
-  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
-  let MensajesEnviados = "";
-  if (respuestaFormGuardada != "") {
-    MensajesEnviados = "Hay mensajes para leer";
-    console.log(MensajesEnviados);
-  }
-
-  sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
-
-  respuestaFormGuardada != ""
-    ? (MensajesEnviados = "Hay mensajes para leer")
-    : (MensajesEnviados = "No hay mensajes para leer");
-  console.log(MensajesEnviados);
-
-  alertaSubmit.onclick = (e) => {
-    swal({
-      title: "Thank you!",
-      text: "Your consult has been sent!",
-      icon: "success",
-      button: "OK",
-    });
-  };
 }
+
+if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Escribi un mensaje valido";
+  mensajeError.style.color = "red";
+  mensajeUsuario.value.focus();
+} else {
+  mensajeError.style.display = "none";
+}
+
+if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " El email que ingresaste no es valido";
+  mensajeError.style.color = "red";
+  emailUsuario.value.focus();
+} else {
+  mensajeError.style.display = "none";
+}
+
+if (motivoUsuario.value === "") {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Selecciona un motivo de consulta";
+  mensajeError.style.color = "red";
+  motivoUsuario.value.focus();
+} else {
+  mensajeError.style.display = "none";
+}
+
+if (
+  paisUsuario.value === "" ||
+  paisUsuario.value.trim().length === 0 ||
+  paisUsuario.value === "Country"
+) {
+  mensajeError.style.display = "block";
+  mensajeError.innerText = " Selecciona un pais";
+  mensajeError.style.color = "red";
+  paisUsuario.value.focus();
+} else {
+  mensajeError.style.display = "none";
+}
+
+const respuestaFormulario = {
+  nombre: nombreUsuario.value,
+  email: emailUsuario.value,
+  motivo: motivoUsuario.value,
+  pais: paisUsuario.value,
+  mensaje: mensajeUsuario.value,
+};
+
+const respuesta2 = { ...respuestaFormulario };
+console.log(respuesta2);
+
+//storage
+let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+let MensajesEnviados = "";
+if (respuestaFormGuardada != "") {
+  MensajesEnviados = "Hay mensajes para leer";
+  console.log(MensajesEnviados);
+}
+
+sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
+
+respuestaFormGuardada != ""
+  ? (MensajesEnviados = "Hay mensajes para leer")
+  : (MensajesEnviados = "No hay mensajes para leer");
+console.log(MensajesEnviados);
+
+alertaSubmit.onclick = () => {
+  swal({
+    title: "Thank you!",
+    text: "Your consult has been sent!",
+    icon: "success",
+    button: "OK",
+  });
+};
 
 /*
 FETCH
