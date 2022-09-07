@@ -1,7 +1,6 @@
 //PRACTICA FUNCIONES Y BUCLES
 /*
 alert("Hola, bienvenido a la sección de consultas");
-
 function validarNombre() {
   let nombre = prompt("Decime tu nombre");
   while (nombre === "" || nombre.trim().length === 0) {
@@ -10,7 +9,6 @@ function validarNombre() {
   }
   return nombre;
 }
-
 function validarEmail() {
   let email = prompt("Decime tu email");
   while (email === "" || email.trim().length === 0) {
@@ -19,7 +17,6 @@ function validarEmail() {
   }
   return email;
 }
-
 function validarMotivo() {
   let motivo = prompt("Decime el motivo: \n Suggestion \n Complaint \n Other");
   if (motivo === "Suggestion") {
@@ -34,7 +31,6 @@ function validarMotivo() {
   }
   return motivo;
 }
-
 function validarPais() {
   let pais = prompt("Decime el pais");
   while (pais === "" || pais.trim().length === 0) {
@@ -43,7 +39,6 @@ function validarPais() {
   }
   return pais;
 }
-
 function validarMensaje() {
   let mensaje = prompt("Decime el mensaje");
   while (mensaje === "" || mensaje.trim().length === 0) {
@@ -52,13 +47,11 @@ function validarMensaje() {
   }
   return mensaje;
 }
-
 validarNombre();
 validarEmail();
 validarMotivo();
 validarPais();
 validarMensaje();
-
 let nombreFormulario = validarNombre(nombre);
 let emailFormulario = validarEmail(email);
 let motivoFormulario = validarMotivo(motivo);
@@ -69,7 +62,6 @@ let mensajeFormulario = validarMensaje(mensaje);
 /*
 //PRACTICA ARRAYS Y OBJETOS
 const respuestasFormulario = [];
-
 function consultaFormulario() {
   this.bienvenido = alert("Hola, bienvenido a la sección de consultas");
   this.validarNombre = function () {
@@ -80,7 +72,6 @@ function consultaFormulario() {
     }
     return (this.nombre = nombre);
   };
-
   this.validarEmail = function () {
     let email = prompt("Decime tu email");
     while (email === "" || email.trim().length === 0) {
@@ -89,14 +80,12 @@ function consultaFormulario() {
     }
     return (this.email = email);
   };
-
   this.validarMotivo = function () {
     let motivo = prompt(
       "Decime el motivo: \n Suggestion \n Complaint \n Other"
     );
     return (this.motivo = motivo);
   };
-
   this.validarPais = function () {
     let pais = prompt("Decime el pais");
     while (pais === "" || pais.trim().length === 0) {
@@ -105,7 +94,6 @@ function consultaFormulario() {
     }
     return (this.pais = pais);
   };
-
   this.validarMensaje = function () {
     let mensaje = prompt("Decime el mensaje");
     while (mensaje === "" || mensaje.trim().length === 0) {
@@ -127,19 +115,14 @@ consulta2.validarEmail();
 consulta2.validarMotivo();
 consulta2.validarPais();
 consulta2.validarMensaje();
-
 console.log(consulta1);
 console.log(consulta2);
-
 respuestasFormulario.push(consulta1);
 respuestasFormulario.push(consulta2);
-
 console.log(respuestasFormulario);
-
 //Agrego busqueda
 const consultasOther = respuestasFormulario.find((m) => m.motivo === "Other");
 console.log(consultasOther);
-
 //Primeros puntos con DOM
 let parte = document.getElementsByClassName("footer");
 console.log(parte[0].innerHTML);
@@ -181,89 +164,109 @@ function validarFormulario(e) {
   ] = formArray;
   console.log(nombreUsuario.value);
 
-  if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " El nombre que ingresaste no es valido";
-    mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
+  function validarMensajeForm() {
+    if (
+      mensajeUsuario.value === "" ||
+      mensajeUsuario.value.trim().length < 10
+    ) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Escribi un mensaje valido";
+      mensajeError.style.color = "red";
+      validarMensajeForm();
+    } else {
+      mensajeError.style.display = "none";
+    }
   }
-}
 
-if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
-  mensajeError.style.display = "block";
-  mensajeError.innerText = " Escribi un mensaje valido";
-  mensajeError.style.color = "red";
-  mensajeUsuario.value.focus();
-} else {
-  mensajeError.style.display = "none";
-}
+  function validarPaisForm() {
+    if (
+      paisUsuario.value === "" ||
+      paisUsuario.value.trim().length === 0 ||
+      paisUsuario.value === "Country"
+    ) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Selecciona un pais";
+      mensajeError.style.color = "red";
+      validarPaisForm();
+    } else {
+      mensajeError.style.display = "none";
+    }
+  }
 
-if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
-  mensajeError.style.display = "block";
-  mensajeError.innerText = " El email que ingresaste no es valido";
-  mensajeError.style.color = "red";
-  emailUsuario.value.focus();
-} else {
-  mensajeError.style.display = "none";
-}
+  function validarNameForm() {
+    if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " El nombre que ingresaste no es valido";
+      mensajeError.style.color = "red";
+      validarNameForm();
+    } else {
+      mensajeError.style.display = "none";
+    }
+  }
 
-if (motivoUsuario.value === "") {
-  mensajeError.style.display = "block";
-  mensajeError.innerText = " Selecciona un motivo de consulta";
-  mensajeError.style.color = "red";
-  motivoUsuario.value.focus();
-} else {
-  mensajeError.style.display = "none";
-}
+  function validarEmailForm() {
+    if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " El email que ingresaste no es valido";
+      mensajeError.style.color = "red";
+      validarEmailForm();
+    } else {
+      mensajeError.style.display = "none";
+    }
+  }
 
-if (
-  paisUsuario.value === "" ||
-  paisUsuario.value.trim().length === 0 ||
-  paisUsuario.value === "Country"
-) {
-  mensajeError.style.display = "block";
-  mensajeError.innerText = " Selecciona un pais";
-  mensajeError.style.color = "red";
-  paisUsuario.value.focus();
-} else {
-  mensajeError.style.display = "none";
-}
+  function validarMotivoForm() {
+    if (motivoUsuario.value === "") {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Selecciona un motivo de consulta";
+      mensajeError.style.color = "red";
+      validarMotivoForm();
+    } else {
+      mensajeError.style.display = "none";
+    }
+  }
 
-const respuestaFormulario = {
-  nombre: nombreUsuario.value,
-  email: emailUsuario.value,
-  motivo: motivoUsuario.value,
-  pais: paisUsuario.value,
-  mensaje: mensajeUsuario.value,
-};
+  validarMensajeForm();
+  validarPaisForm();
+  validarNameForm();
+  validarEmailForm();
+  validarMotivoForm();
 
-const respuesta2 = { ...respuestaFormulario };
-console.log(respuesta2);
+  const respuestaFormulario = {
+    nombre: nombreUsuario.value,
+    email: emailUsuario.value,
+    motivo: motivoUsuario.value,
+    pais: paisUsuario.value,
+    mensaje: mensajeUsuario.value,
+  };
 
-//storage
-let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
-let MensajesEnviados = "";
-if (respuestaFormGuardada != "") {
-  MensajesEnviados = "Hay mensajes para leer";
+  const respuesta2 = { ...respuestaFormulario };
+  console.log(respuesta2);
+
+  //storage
+  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+  let MensajesEnviados = "";
+  if (respuestaFormGuardada != "") {
+    MensajesEnviados = "Hay mensajes para leer";
+    console.log(MensajesEnviados);
+  }
+
+  sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
+
+  respuestaFormGuardada != ""
+    ? (MensajesEnviados = "Hay mensajes para leer")
+    : (MensajesEnviados = "No hay mensajes para leer");
   console.log(MensajesEnviados);
+
+  alertaSubmit.onclick = (e) => {
+    swal({
+      title: "Thank you!",
+      text: "Your consult has been sent!",
+      icon: "success",
+      button: "OK",
+    });
+  };
 }
-
-sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
-
-respuestaFormGuardada != ""
-  ? (MensajesEnviados = "Hay mensajes para leer")
-  : (MensajesEnviados = "No hay mensajes para leer");
-console.log(MensajesEnviados);
-
-alertaSubmit.onclick = () => {
-  swal({
-    title: "Thank you!",
-    text: "Your consult has been sent!",
-    icon: "success",
-    button: "OK",
-  });
-};
 
 /*
 FETCH
