@@ -146,7 +146,7 @@ console.log(parte[0].innerHTML);
 parte[0].innerHTML = "Este es el footer";
 */
 
-//Aplicando DOM y eventos al form de Contact
+//VERSION FINAL
 alert("Hola, bienvenido a la sección de consultas");
 
 let formulario = document.getElementById("formularioContact");
@@ -166,6 +166,20 @@ let mensajeError = document.querySelector(".errorFormulario");
 let alertaSubmit = document.getElementById("formSubmit");
 
 formulario.addEventListener("submit", validarFormulario);
+let pais = "";
+let mensaje = "";
+
+/*
+const validarPais = (pais) => {
+  while (pais === "" || pais.trim().length === 0 || pais === "Country") {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Selecciona un pais";
+    mensajeError.style.color = "red";
+  }
+  /*mensajeError.style.display = "none";
+  pais = "";
+};
+*/
 
 function validarFormulario(e) {
   e.preventDefault();
@@ -181,10 +195,20 @@ function validarFormulario(e) {
   ] = formArray;
   console.log(nombreUsuario.value);
 
+  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Escribi un mensaje valido";
+    mensajeError.style.color = "red";
+    mensajeUsuario.value.focus();
+  } else {
+    mensajeError.style.display = "none";
+  }
+
   if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El nombre que ingresaste no es valido";
     mensajeError.style.color = "red";
+    nombreUsuario.value.focus();
   } else {
     mensajeError.style.display = "none";
   }
@@ -193,6 +217,7 @@ function validarFormulario(e) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " El email que ingresaste no es valido";
     mensajeError.style.color = "red";
+    emailUsuario.value.focus();
   } else {
     mensajeError.style.display = "none";
   }
@@ -201,6 +226,7 @@ function validarFormulario(e) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " Selecciona un motivo de consulta";
     mensajeError.style.color = "red";
+    motivoUsuario.value.focus();
   } else {
     mensajeError.style.display = "none";
   }
@@ -213,14 +239,7 @@ function validarFormulario(e) {
     mensajeError.style.display = "block";
     mensajeError.innerText = " Selecciona un pais";
     mensajeError.style.color = "red";
-  } else {
-    mensajeError.style.display = "none";
-  }
-
-  if (mensajeUsuario.value === "" || mensajeUsuario.value.trim().length < 10) {
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Escribi un mensaje valido";
-    mensajeError.style.color = "red";
+    paisUsuario.value.focus();
   } else {
     mensajeError.style.display = "none";
   }
