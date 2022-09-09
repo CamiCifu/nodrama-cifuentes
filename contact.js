@@ -84,6 +84,14 @@ let respuestasFormMensaje = document.getElementById("formMensaje");
 
 let mensajeError = document.querySelector(".errorFormulario");
 
+let mensajeError1 = document.querySelector(".errorFormulario1");
+
+let mensajeError2 = document.querySelector(".errorFormulario2");
+
+let mensajeError3 = document.querySelector(".errorFormulario3");
+
+let mensajeError4 = document.querySelector(".errorFormulario4");
+
 let alertaSubmit = document.getElementById("formSubmit");
 
 formulario.addEventListener("submit", validarFormulario);
@@ -101,7 +109,6 @@ function validarFormulario(e) {
     mensajeUsuario,
   ] = formArray;
   console.log(nombreUsuario.value);
-  console.log(formArray);
 
   function validarMensajeForm() {
     if (
@@ -122,41 +129,41 @@ function validarFormulario(e) {
       paisUsuario.value.trim().length === 0 ||
       paisUsuario.value === "Country"
     ) {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " Selecciona un pais";
-      mensajeError.style.color = "red";
+      mensajeError1.style.display = "block";
+      mensajeError1.innerText = " Selecciona un pais";
+      mensajeError1.style.color = "red";
     } else {
-      mensajeError.style.display = "none";
+      mensajeError1.style.display = "none";
     }
   }
 
   function validarNameForm() {
     if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " El nombre que ingresaste no es valido";
-      mensajeError.style.color = "red";
+      mensajeError2.style.display = "block";
+      mensajeError2.innerText = " El nombre que ingresaste no es valido";
+      mensajeError2.style.color = "red";
     } else {
-      mensajeError.style.display = "none";
+      mensajeError2.style.display = "none";
     }
   }
 
   function validarEmailForm() {
     if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " El email que ingresaste no es valido";
-      mensajeError.style.color = "red";
+      mensajeError3.style.display = "block";
+      mensajeError3.innerText = " El email que ingresaste no es valido";
+      mensajeError3.style.color = "red";
     } else {
-      mensajeError.style.display = "none";
+      mensajeError3.style.display = "none";
     }
   }
 
   function validarMotivoForm() {
     if (motivoUsuario.value === "") {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " Selecciona un motivo de consulta";
-      mensajeError.style.color = "red";
+      mensajeError4.style.display = "block";
+      mensajeError4.innerText = " Selecciona un motivo de consulta";
+      mensajeError4.style.color = "red";
     } else {
-      mensajeError.style.display = "none";
+      mensajeError4.style.display = "none";
     }
   }
 
