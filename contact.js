@@ -52,92 +52,103 @@ function validarFormulario(event) {
   ] = formArray;
   console.log(formArray);
 
-  if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
-    mensajeError2.style.display = "block";
-    mensajeError2.innerText = " El nombre que ingresaste no es valido";
-    mensajeError2.style.color = "red";
-    validacion = false;
-    console.log(validacion);
-    console.log(typeof validacion);
-    return false;
-  } else if (paisUsuario.value === "") {
-    mensajeError2.style.display = "none";
-    mensajeError1.style.display = "block";
-    mensajeError1.innerText = " Selecciona un pais";
-    mensajeError1.style.color = "red";
-    validacion = false;
-    console.log(validacion);
-    return false;
-  } else if (
+  while (
+    nombreUsuario.value === "" ||
+    nombreUsuario.value.trim().length === 0 ||
+    paisUsuario.value === "" ||
     emailUsuario.value === "" ||
-    emailUsuario.value.trim().length === 0
+    emailUsuario.value.trim().length === 0 ||
+    motivoUsuario.value === "" ||
+    mensajeUsuario.value === ""
   ) {
-    mensajeError1.style.display = "none";
-    mensajeError3.style.display = "block";
-    mensajeError3.innerText = " El email que ingresaste no es valido";
-    mensajeError3.style.color = "red";
-    validacion = false;
-    console.log(validacion);
-    return false;
-  } else if (motivoUsuario.value === "") {
-    mensajeError3.style.display = "none";
-    mensajeError4.style.display = "block";
-    mensajeError4.innerText = " Selecciona un motivo de consulta";
-    mensajeError4.style.color = "red";
-    validacion = false;
-    console.log(validacion);
-    return false;
-  } else if (mensajeUsuario.value === "") {
-    mensajeError4.style.display = "none";
-    mensajeError.style.display = "block";
-    mensajeError.innerText = " Escribi un mensaje valido";
-    mensajeError.style.color = "red";
-    validacion = false;
-    console.log(validacion);
-    return false;
-  } else if (mensajeUsuario.value != "") {
-    mensajeError.style.display = "none";
-    validacion = true;
-    console.log(validacion);
-    console.log(typeof validacion);
-    alertaSubmit.onclick = (event) => {
-      swal({
-        title: "Thank you!",
-        text: "Your consult has been sent!",
-        icon: "success",
-        button: "OK",
-      });
+    if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+      console.log("estamos validando el nombre");
+      mensajeError2.style.display = "block";
+      mensajeError2.innerText = " El nombre que ingresaste no es valido";
+      mensajeError2.style.color = "red";
       validacion = false;
       console.log(validacion);
       console.log(typeof validacion);
-    };
-    //pido otro click
-    console.log(validacion);
+      return false;
+    } else if (paisUsuario.value === "") {
+      mensajeError2.style.display = "none";
+      mensajeError1.style.display = "block";
+      mensajeError1.innerText = " Selecciona un pais";
+      mensajeError1.style.color = "red";
+      validacion = false;
+      console.log(validacion);
+      return false;
+    } else if (
+      emailUsuario.value === "" ||
+      emailUsuario.value.trim().length === 0
+    ) {
+      mensajeError1.style.display = "none";
+      mensajeError3.style.display = "block";
+      mensajeError3.innerText = " El email que ingresaste no es valido";
+      mensajeError3.style.color = "red";
+      validacion = false;
+      console.log(validacion);
+      return false;
+    } else if (motivoUsuario.value === "") {
+      mensajeError3.style.display = "none";
+      mensajeError4.style.display = "block";
+      mensajeError4.innerText = " Selecciona un motivo de consulta";
+      mensajeError4.style.color = "red";
+      validacion = false;
+      console.log(validacion);
+      return false;
+    } else if (mensajeUsuario.value === "") {
+      mensajeError4.style.display = "none";
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Escribi un mensaje valido";
+      mensajeError.style.color = "red";
+      validacion = false;
+      console.log(validacion);
+      return false;
+    } else if (mensajeUsuario.value != "") {
+      mensajeError.style.display = "none";
+      validacion = true;
+      console.log(validacion);
+      console.log(typeof validacion);
+      //pido otro click
+      console.log(validacion);
 
-    //Guardo la información
-
-    const respuestaFormulario = new consultasEnviadas(
-      nombreUsuario.value,
-      emailUsuario.value,
-      motivoUsuario.value,
-      paisUsuario.value,
-      mensajeUsuario.value
-    );
-    console.log(respuestaFormulario);
-    //storage
-    let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
-    let MensajesEnviados = "";
-    if (respuestaFormGuardada != "") {
-      MensajesEnviados = "Hay mensajes para leer";
-      console.log(MensajesEnviados);
-      console.log(respuestaFormGuardada);
+      alertaSubmit.onclick = (event) => {
+        swal({
+          title: "Thank you!",
+          text: "Your consult has been sent!",
+          icon: "success",
+          button: "OK",
+        });
+        validacion = false;
+        console.log(validacion);
+        console.log(typeof validacion);
+      };
     }
-    formulario.reset();
-    formArray = [];
-    console.log(formArray);
-    validacion == false;
-    return;
   }
+  //Guardo la información
+
+  const respuestaFormulario = new consultasEnviadas(
+    nombreUsuario.value,
+    emailUsuario.value,
+    motivoUsuario.value,
+    paisUsuario.value,
+    mensajeUsuario.value
+  );
+  console.log(respuestaFormulario);
+  //storage
+  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+  let MensajesEnviados = "";
+  if (respuestaFormGuardada != "") {
+    MensajesEnviados = "Hay mensajes para leer";
+    console.log(MensajesEnviados);
+    console.log(respuestaFormGuardada);
+  }
+  formulario.reset();
+  formArray = [];
+  console.log(formArray);
+  validacion == false;
+  return;
 }
 
 //deberia crear un array que vaya uniendo estos objetos de respuestas del form
