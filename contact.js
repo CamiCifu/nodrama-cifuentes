@@ -70,8 +70,18 @@ parte[0].innerHTML = "Este es el footer";
 
 //VERSION FINAL
 
-let formulario = document.getElementById("formularioContact");
+//constructor para creacion de objetos
 
+function consultasEnviadas(nombre, email, motivo, pais, mensaje) {
+  this.nombre = nombre;
+  this.email = email;
+  this.motivo = motivo;
+  this.pais = pais;
+  this.mensaje = mensaje;
+}
+
+let formulario = document.getElementById("formularioContact");
+//no entiendo para que busco toods estos ID
 let respuestasFormName = document.getElementById("formName");
 
 let respuestasFormEmail = document.getElementById("formEmail");
@@ -96,10 +106,9 @@ let alertaSubmit = document.getElementById("formSubmit");
 
 formulario.addEventListener("submit", validarFormulario);
 
-function validarFormulario(e) {
-  e.preventDefault();
-  console.log(e);
-  let formArray = e.target;
+function validarFormulario(event) {
+  event.preventDefault();
+  let formArray = event.target;
 
   let [
     nombreUsuario,
@@ -108,20 +117,11 @@ function validarFormulario(e) {
     paisUsuario,
     mensajeUsuario,
   ] = formArray;
-  console.log(nombreUsuario.value);
 
-  function validarMensajeForm() {
-    if (
-      mensajeUsuario.value === "" ||
-      mensajeUsuario.value.trim().length < 10
-    ) {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " Escribi un mensaje valido";
-      mensajeError.style.color = "red";
-    } else {
-      mensajeError.style.display = "none";
-    }
-  }
+  console.log(formArray);
+  console.log(nombreUsuario);
+  console.log(nombreUsuario.value);
+  //console.log(nombreUsuario.value);
 
   function validarPaisForm() {
     if (
@@ -167,23 +167,40 @@ function validarFormulario(e) {
     }
   }
 
+  function validarMensajeForm() {
+    if (
+      mensajeUsuario.value === "" ||
+      mensajeUsuario.value.trim().length < 10
+    ) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Escribi un mensaje valido";
+      mensajeError.style.color = "red";
+    } else {
+      mensajeError.style.display = "none";
+    }
+    return mensajeUsuario.value;
+  }
+
   validarMensajeForm();
   validarPaisForm();
   validarNameForm();
   validarEmailForm();
   validarMotivoForm();
 
-  const respuestaFormulario = {
-    nombre: nombreUsuario.value,
-    email: emailUsuario.value,
-    motivo: motivoUsuario.value,
-    pais: paisUsuario.value,
-    mensaje: mensajeUsuario.value,
-  };
+  const respuestaFormulario = new consultasEnviadas(
+    nombreUsuario.value,
+    emailUsuario.value,
+    motivoUsuario.value,
+    paisUsuario.value,
+    mensajeUsuario.value
+  );
 
+  //deberia crear un array que vaya uniendo estos objetos de respuestas del form
+  //usamos spread
+  /*
   const respuesta2 = { ...respuestaFormulario };
   console.log(respuesta2);
-
+*/
   //storage
   let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
   let MensajesEnviados = "";
@@ -194,6 +211,7 @@ function validarFormulario(e) {
 
   sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
 
+  //adicion de operador ternario (funcion reducida)
   respuestaFormGuardada != ""
     ? (MensajesEnviados = "Hay mensajes para leer")
     : (MensajesEnviados = "No hay mensajes para leer");
