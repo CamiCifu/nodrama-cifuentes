@@ -8,6 +8,8 @@ function consultasEnviadas(nombre, email, motivo, pais, mensaje) {
   this.mensaje = mensaje;
 }
 
+let respuestasAcumuladasDeconsultas = [];
+
 let formulario = document.getElementById("formularioContact");
 let mensajeError = document.querySelector(".errorFormulario");
 let mensajeError1 = document.querySelector(".errorFormulario1");
@@ -82,21 +84,31 @@ function validarFormulario(event) {
     return false;
   } else {
     mensajeError.style.display = "none";
-    const respuestaFormulario = new consultasEnviadas(
-      nombreUsuario.value,
-      emailUsuario.value,
-      motivoUsuario.value,
-      paisUsuario.value,
-      mensajeUsuario.value
-    );
-    console.log(respuestaFormulario);
 
-    //storage
-    let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
-    sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
+    respuestasAcumuladasDeconsultas.push(
+      new consultasEnviadas(
+        nombreUsuario.value,
+        emailUsuario.value,
+        motivoUsuario.value,
+        paisUsuario.value,
+        mensajeUsuario.value
+      )
+    );
+    console.log(respuestasAcumuladasDeconsultas);
+
+    let guardaLocaldeConsultas = (clave, valor) => {
+      localStorage.setItem(clave, valor);
+    };
+    guardaLocaldeConsultas(
+      "Lista de consultas",
+      JSON.stringify(respuestasAcumuladasDeconsultas)
+    );
+    console.log(typeof respuestasAcumuladasDeconsultas);
+    console.log(typeof guardaLocaldeConsultas);
+
     let MensajesEnviados = "";
     //adicion de operador ternario (funcion reducida)
-    respuestaFormGuardada != ""
+    respuestasAcumuladasDeconsultas != ""
       ? (MensajesEnviados = "Hay mensajes para leer")
       : (MensajesEnviados = "No hay mensajes para leer");
     console.log(MensajesEnviados);
@@ -108,6 +120,12 @@ function validarFormulario(event) {
     });
     formulario.reset();
   }
+
+  /*
+      //storage
+      let respuestasFormGuardada = JSON.stringify(respuestasAcumuladasDeconsultas);
+      sessionStorage.setItem("respuestaUsuario", respuestasFormGuardada);
+      let MensajesEnviados = "";*/
 
   //deberia crear un array que vaya uniendo estos objetos de respuestas del form
   //usamos spread
