@@ -1,75 +1,3 @@
-/*
-//PRACTICA ARRAYS Y OBJETOS
-const respuestasFormulario = [];
-function consultaFormulario() {
-  this.bienvenido = alert("Hola, bienvenido a la sección de consultas");
-  this.validarNombre = function () {
-    let nombre = prompt("Decime tu nombre");
-    while (nombre === "" || nombre.trim().length === 0) {
-      alert("Por favor re-escribi tu nombre.");
-      nombre = prompt("Decime tu nombre");
-    }
-    return (this.nombre = nombre);
-  };
-  this.validarEmail = function () {
-    let email = prompt("Decime tu email");
-    while (email === "" || email.trim().length === 0) {
-      alert("Por favor re-escribi tu email.");
-      email = prompt("Decime tu email");
-    }
-    return (this.email = email);
-  };
-  this.validarMotivo = function () {
-    let motivo = prompt(
-      "Decime el motivo: \n Suggestion \n Complaint \n Other"
-    );
-    return (this.motivo = motivo);
-  };
-  this.validarPais = function () {
-    let pais = prompt("Decime el pais");
-    while (pais === "" || pais.trim().length === 0) {
-      alert("Por favor decime el pais.");
-      pais = prompt("Decime el pais");
-    }
-    return (this.pais = pais);
-  };
-  this.validarMensaje = function () {
-    let mensaje = prompt("Decime el mensaje");
-    while (mensaje === "" || mensaje.trim().length === 0) {
-      alert("Por favor decime el mensaje.");
-      mensaje = prompt("Decime el mensaje");
-    }
-    return (this.mensaje = mensaje);
-  };
-}
-const consulta1 = new consultaFormulario();
-consulta1.validarNombre();
-consulta1.validarEmail();
-consulta1.validarMotivo();
-consulta1.validarPais();
-consulta1.validarMensaje();
-const consulta2 = new consultaFormulario();
-consulta2.validarNombre();
-consulta2.validarEmail();
-consulta2.validarMotivo();
-consulta2.validarPais();
-consulta2.validarMensaje();
-console.log(consulta1);
-console.log(consulta2);
-respuestasFormulario.push(consulta1);
-respuestasFormulario.push(consulta2);
-console.log(respuestasFormulario);
-//Agrego busqueda
-const consultasOther = respuestasFormulario.find((m) => m.motivo === "Other");
-console.log(consultasOther);
-//Primeros puntos con DOM
-let parte = document.getElementsByClassName("footer");
-console.log(parte[0].innerHTML);
-parte[0].innerHTML = "Este es el footer";
-*/
-
-//VERSION FINAL
-
 //constructor para creacion de objetos
 
 function consultasEnviadas(nombre, email, motivo, pais, mensaje) {
@@ -81,6 +9,7 @@ function consultasEnviadas(nombre, email, motivo, pais, mensaje) {
 }
 
 let formulario = document.getElementById("formularioContact");
+
 //no entiendo para que busco toods estos ID
 let respuestasFormName = document.getElementById("formName");
 
@@ -106,9 +35,13 @@ let alertaSubmit = document.getElementById("formSubmit");
 
 formulario.addEventListener("submit", validarFormulario);
 
+var validacion = false;
+
 function validarFormulario(event) {
   event.preventDefault();
   let formArray = event.target;
+  console.log(typeof validacion);
+  console.log(validacion);
 
   let [
     nombreUsuario,
@@ -117,76 +50,104 @@ function validarFormulario(event) {
     paisUsuario,
     mensajeUsuario,
   ] = formArray;
-
   console.log(formArray);
-  console.log(nombreUsuario);
-  console.log(nombreUsuario.value);
-  //console.log(nombreUsuario.value);
 
-  function validarPaisForm() {
-    if (
-      paisUsuario.value === "" ||
-      paisUsuario.value.trim().length === 0 ||
-      paisUsuario.value === "Country"
-    ) {
-      mensajeError1.style.display = "block";
-      mensajeError1.innerText = " Selecciona un pais";
-      mensajeError1.style.color = "red";
-    } else {
-      mensajeError1.style.display = "none";
+  if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+    mensajeError2.style.display = "block";
+    mensajeError2.innerText = " El nombre que ingresaste no es valido";
+    mensajeError2.style.color = "red";
+    validacion = false;
+    console.log(validacion);
+    console.log(typeof validacion);
+    return false;
+  } else if (paisUsuario.value === "") {
+    mensajeError2.style.display = "none";
+    mensajeError1.style.display = "block";
+    mensajeError1.innerText = " Selecciona un pais";
+    mensajeError1.style.color = "red";
+    validacion = false;
+    console.log(validacion);
+    return false;
+  } else if (
+    emailUsuario.value === "" ||
+    emailUsuario.value.trim().length === 0
+  ) {
+    mensajeError1.style.display = "none";
+    mensajeError3.style.display = "block";
+    mensajeError3.innerText = " El email que ingresaste no es valido";
+    mensajeError3.style.color = "red";
+    validacion = false;
+    console.log(validacion);
+    return false;
+  } else if (motivoUsuario.value === "") {
+    mensajeError3.style.display = "none";
+    mensajeError4.style.display = "block";
+    mensajeError4.innerText = " Selecciona un motivo de consulta";
+    mensajeError4.style.color = "red";
+    validacion = false;
+    console.log(validacion);
+    return false;
+  } else if (mensajeUsuario.value === "") {
+    mensajeError4.style.display = "none";
+    mensajeError.style.display = "block";
+    mensajeError.innerText = " Escribi un mensaje valido";
+    mensajeError.style.color = "red";
+    validacion = false;
+    console.log(validacion);
+    return false;
+  } else if (mensajeUsuario.value != "") {
+    mensajeError.style.display = "none";
+    validacion = true;
+    console.log(validacion);
+    console.log(typeof validacion);
+    alertaSubmit.onclick = (event) => {
+      swal({
+        title: "Thank you!",
+        text: "Your consult has been sent!",
+        icon: "success",
+        button: "OK",
+      });
+      validacion = false;
+      console.log(validacion);
+      console.log(typeof validacion);
+    };
+    //pido otro click
+    console.log(validacion);
+
+    //Guardo la información
+
+    const respuestaFormulario = new consultasEnviadas(
+      nombreUsuario.value,
+      emailUsuario.value,
+      motivoUsuario.value,
+      paisUsuario.value,
+      mensajeUsuario.value
+    );
+    console.log(respuestaFormulario);
+    //storage
+    let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+    let MensajesEnviados = "";
+    if (respuestaFormGuardada != "") {
+      MensajesEnviados = "Hay mensajes para leer";
+      console.log(MensajesEnviados);
+      console.log(respuestaFormGuardada);
     }
+    formulario.reset();
+    formArray = [];
+    console.log(formArray);
+    validacion == false;
+    return;
   }
+}
 
-  function validarNameForm() {
-    if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
-      mensajeError2.style.display = "block";
-      mensajeError2.innerText = " El nombre que ingresaste no es valido";
-      mensajeError2.style.color = "red";
-    } else {
-      mensajeError2.style.display = "none";
-    }
-  }
+//deberia crear un array que vaya uniendo estos objetos de respuestas del form
+//usamos spread
+/*
+  const respuesta2 = { ...respuestaFormulario };
+  console.log(respuesta2);
+*/
 
-  function validarEmailForm() {
-    if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
-      mensajeError3.style.display = "block";
-      mensajeError3.innerText = " El email que ingresaste no es valido";
-      mensajeError3.style.color = "red";
-    } else {
-      mensajeError3.style.display = "none";
-    }
-  }
-
-  function validarMotivoForm() {
-    if (motivoUsuario.value === "") {
-      mensajeError4.style.display = "block";
-      mensajeError4.innerText = " Selecciona un motivo de consulta";
-      mensajeError4.style.color = "red";
-    } else {
-      mensajeError4.style.display = "none";
-    }
-  }
-
-  function validarMensajeForm() {
-    if (
-      mensajeUsuario.value === "" ||
-      mensajeUsuario.value.trim().length < 10
-    ) {
-      mensajeError.style.display = "block";
-      mensajeError.innerText = " Escribi un mensaje valido";
-      mensajeError.style.color = "red";
-    } else {
-      mensajeError.style.display = "none";
-    }
-    return mensajeUsuario.value;
-  }
-
-  validarMensajeForm();
-  validarPaisForm();
-  validarNameForm();
-  validarEmailForm();
-  validarMotivoForm();
-
+/*
   const respuestaFormulario = new consultasEnviadas(
     nombreUsuario.value,
     emailUsuario.value,
@@ -194,13 +155,6 @@ function validarFormulario(event) {
     paisUsuario.value,
     mensajeUsuario.value
   );
-
-  //deberia crear un array que vaya uniendo estos objetos de respuestas del form
-  //usamos spread
-  /*
-  const respuesta2 = { ...respuestaFormulario };
-  console.log(respuesta2);
-*/
   //storage
   let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
   let MensajesEnviados = "";
@@ -217,15 +171,6 @@ function validarFormulario(event) {
     : (MensajesEnviados = "No hay mensajes para leer");
   console.log(MensajesEnviados);
 
-  alertaSubmit.onclick = (e) => {
-    swal({
-      title: "Thank you!",
-      text: "Your consult has been sent!",
-      icon: "success",
-      button: "OK",
-    });
-  };
-}
 
 /*
 FETCH
@@ -242,3 +187,160 @@ fetch(url)
     agregarPersonaje.innerHTML = "<h2> ${daniel.actor} </h2>";
   });
 */
+
+/*
+  alertaSubmit.onclick = (e) => {
+    swal({
+      title: "Thank you!",
+      text: "Your consult has been sent!",
+      icon: "success",
+      button: "OK",
+    });
+  };*/
+
+//copia
+/*
+  function validarNameForm() {
+    if (nombreUsuario.value === "" || nombreUsuario.value.trim().length === 0) {
+      mensajeError2.style.display = "block";
+      mensajeError2.innerText = " El nombre que ingresaste no es valido";
+      mensajeError2.style.color = "red";
+      validacion = false;
+    } else {
+      mensajeError2.style.display = "none";
+      validacion = true;
+    }
+  }
+
+  function validarPaisForm() {
+    if (
+      paisUsuario.value === "" ||
+      paisUsuario.value.trim().length === 0 ||
+      paisUsuario.value === "Country"
+    ) {
+      mensajeError1.style.display = "block";
+      mensajeError1.innerText = " Selecciona un pais";
+      mensajeError1.style.color = "red";
+      validacion = false;
+    } else {
+      mensajeError1.style.display = "none";
+      validacion = true;
+    }
+  }
+
+
+
+  function validarEmailForm() {
+    if (emailUsuario.value === "" || emailUsuario.value.trim().length === 0) {
+      mensajeError3.style.display = "block";
+      mensajeError3.innerText = " El email que ingresaste no es valido";
+      mensajeError3.style.color = "red";
+      validacion = false;
+    } else {
+      mensajeError3.style.display = "none";
+      validacion = true;
+    }
+  }
+
+  function validarMotivoForm() {
+    if (motivoUsuario.value === "") {
+      mensajeError4.style.display = "block";
+      mensajeError4.innerText = " Selecciona un motivo de consulta";
+      mensajeError4.style.color = "red";
+      validacion = false;
+    } else {
+      mensajeError4.style.display = "none";
+      validacion = true;
+    }
+  }
+
+  function validarMensajeForm() {
+    if (
+      mensajeUsuario.value === "" ||
+      mensajeUsuario.value.trim().length < 10
+    ) {
+      mensajeError.style.display = "block";
+      mensajeError.innerText = " Escribi un mensaje valido";
+      mensajeError.style.color = "red";
+      validacion = false;
+    } else {
+      mensajeError.style.display = "none";
+      validacion = true;
+    }
+  }
+
+  validarNameForm();
+  validarEmailForm();
+  validarPaisForm();
+  validarMotivoForm();
+  validarMensajeForm();
+
+  //deberia crear un array que vaya uniendo estos objetos de respuestas del form
+  //usamos spread
+  /*
+  const respuesta2 = { ...respuestaFormulario };
+  console.log(respuesta2);
+*/
+/*
+  if (validacion === true) {
+    formularioAEnviar.submit();
+    swal({
+      title: "Thank you!",
+      text: "Your consult has been sent!",
+      icon: "success",
+      button: "OK",
+    });
+  }
+
+  const respuestaFormulario = new consultasEnviadas(
+    nombreUsuario.value,
+    emailUsuario.value,
+    motivoUsuario.value,
+    paisUsuario.value,
+    mensajeUsuario.value
+  );
+  //storage
+  let respuestaFormGuardada = JSON.stringify(respuestaFormulario);
+  let MensajesEnviados = "";
+  if (respuestaFormGuardada != "") {
+    MensajesEnviados = "Hay mensajes para leer";
+    console.log(MensajesEnviados);
+  }
+
+  sessionStorage.setItem("respuestaUsuario", respuestaFormGuardada);
+
+  //adicion de operador ternario (funcion reducida)
+  respuestaFormGuardada != ""
+    ? (MensajesEnviados = "Hay mensajes para leer")
+    : (MensajesEnviados = "No hay mensajes para leer");
+  console.log(MensajesEnviados);
+
+
+
+/*
+FETCH
+let url = "http://hp-api.herokuapp.com/api/characters";
+let agregarPersonaje = document.getElementById("nombreHP");
+fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((json) => {
+    const daniel = json[0];
+    console.log(daniel.actor);
+    console.log(typeof daniel);
+    agregarPersonaje.innerHTML = "<h2> ${daniel.actor} </h2>";
+  });
+*/
+
+/*
+  alertaSubmit.onclick = (e) => {
+    swal({
+      title: "Thank you!",
+      text: "Your consult has been sent!",
+      icon: "success",
+      button: "OK",
+    });
+  };
+
+  */
