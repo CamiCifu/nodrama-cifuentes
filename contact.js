@@ -128,7 +128,6 @@ function validarFormulario(event) {
 
 //query selector para agregar iconos de paises para decoracion
 const seccionBanderas = document.querySelector(".banderas");
-console.log(seccionBanderas);
 
 //FETCH
 let url = "https://restcountries.com/v3.1/all";
@@ -139,9 +138,7 @@ fetch(url)
   })
   .then((json) => {
     let paises = json;
-    console.log(paises);
     const banderas = paises.slice(0, 30);
-    console.log(banderas);
     banderas.forEach((bandera) => {
       const { flag } = bandera;
       seccionBanderas.innerHTML += `<div class="col mt-4">
