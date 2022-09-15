@@ -103,8 +103,6 @@ function validarFormulario(event) {
       "Lista de consultas",
       JSON.stringify(respuestasAcumuladasDeconsultas)
     );
-    console.log(typeof respuestasAcumuladasDeconsultas);
-    console.log(typeof guardaLocaldeConsultas);
 
     let MensajesEnviados = "";
     //adicion de operador ternario (funcion reducida)
@@ -121,13 +119,6 @@ function validarFormulario(event) {
     formulario.reset();
   }
 
-  /*
-      //storage
-      let respuestasFormGuardada = JSON.stringify(respuestasAcumuladasDeconsultas);
-      sessionStorage.setItem("respuestaUsuario", respuestasFormGuardada);
-      let MensajesEnviados = "";*/
-
-  //deberia crear un array que vaya uniendo estos objetos de respuestas del form
   //usamos spread
   /*
   const respuesta2 = { ...respuestaFormulario };
@@ -135,18 +126,25 @@ function validarFormulario(event) {
 */
 }
 
-/*
-FETCH
-let url = "http://hp-api.herokuapp.com/api/characters";
-let agregarPersonaje = document.getElementById("nombreHP");
+//query selector para agregar iconos de paises para decoracion
+const seccionBanderas = document.querySelector(".banderas");
+console.log(seccionBanderas);
+
+//FETCH
+let url = "https://restcountries.com/v3.1/all";
+
 fetch(url)
   .then((response) => {
     return response.json();
   })
   .then((json) => {
-    const daniel = json[0];
-    console.log(daniel.actor);
-    console.log(typeof daniel);
-    agregarPersonaje.innerHTML = "<h2> ${daniel.actor} </h2>";
+    let paises = json;
+    console.log(paises);
+    const banderas = paises.slice(0, 30);
+    console.log(banderas);
+    banderas.forEach((bandera) => {
+      const { flag } = bandera;
+      seccionBanderas.innerHTML += `<div class="col mt-4">
+      ${flag}</div>`;
+    });
   });
-*/
